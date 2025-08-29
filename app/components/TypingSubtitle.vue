@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <h2 class="mt-2 text-neutral-600">
+    <h2 class="mt-2 text-neutral-600 dark:text-neutral-300">
         <span>{{ text }}</span>
         <span class="inline-block w-[1ch] animate-[blink_1s_steps(2,start)_infinite]">|</span>
     </h2>

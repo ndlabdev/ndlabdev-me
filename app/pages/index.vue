@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4 mt-12 flex flex-col-reverse lg:flex-row gap-6">
         <!-- Main content -->
         <div class="flex-1">
-            <div class="bg-white rounded-3xl shadow p-8">
+            <div class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8">
                 <!-- Hero section -->
                 <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                     <!-- Avatar -->
@@ -19,14 +19,14 @@
 
                     <!-- Text -->
                     <div>
-                        <h1 class="text-3xl font-bold text-neutral-900">
+                        <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
                             Hi there <span class="inline-block origin-[70%_70%] animate-[wave_2s_infinite]">👋</span>,
                             I’m <span class="text-primary">Nguyen Long Dang</span>
                         </h1>
 
                         <TypingSubtitle />
 
-                        <p class="mt-2 text-neutral-700">
+                        <p class="mt-2 text-neutral-700 dark:text-neutral-300">
                             I am a passionate software developer who loves building clean, modern, and scalable web
                             applications. With experience across both frontend and backend development, I enjoy solving
                             complex problems, designing intuitive user interfaces, and bringing ideas to life through

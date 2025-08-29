@@ -3,7 +3,7 @@
         <!-- Sticky wrapper -->
         <div class="sticky top-36">
             <!-- Profile Card -->
-            <div class="relative bg-white rounded-3xl shadow p-6 pt-20 text-center">
+            <div class="relative bg-white dark:bg-neutral-900 rounded-3xl shadow p-6 pt-20 text-center transition-colors">
                 <!-- Avatar floating -->
                 <div class="absolute inset-x-0 -top-16 flex justify-center">
                     <NuxtImg
@@ -18,12 +18,12 @@
                 </div>
 
                 <!-- Name -->
-                <h3 class="mt-2 text-2xl font-semibold text-neutral-900">
+                <h3 class="mt-2 text-2xl font-semibold text-neutral-900 dark:text-neutral-100 transition-colors">
                     {{ siteConfig.brand }}
                 </h3>
 
                 <!-- Roles (typewriter) -->
-                <div class="mt-1 text-sm text-neutral-600 min-h-[24px]">
+                <div class="mt-1 text-sm text-neutral-600 dark:text-neutral-400 min-h-[24px] transition-colors">
                     <TypingSubtitle />
                 </div>
 
@@ -40,7 +40,7 @@
                             :href="social.url"
                             target="_blank"
                             :class="social.class"
-                            class="group flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200 text-neutral-600 transition-colors"
+                            class="group flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200 text-neutral-600 dark:bg-neutral-700 dark:text-neutral-300 transition-colors"
                         >
                             <UIcon
                                 :name="social.icon"
