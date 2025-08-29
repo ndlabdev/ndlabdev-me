@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto px-4 mt-5 flex flex-col lg:flex-row gap-6">
+    <div class="container mx-auto px-4 mt-12 flex flex-col-reverse lg:flex-row gap-6">
         <!-- Main content -->
         <div class="flex-1">
             <div class="bg-white rounded-3xl shadow p-8">
@@ -20,7 +20,8 @@
                     <!-- Text -->
                     <div>
                         <h1 class="text-3xl font-bold text-neutral-900">
-                            Hi there <span class="inline-block origin-[70%_70%] animate-[wave_2s_infinite]">👋</span>
+                            Hi there <span class="inline-block origin-[70%_70%] animate-[wave_2s_infinite]">👋</span>,
+                            I’m <span class="text-primary">Nguyen Long Dang</span>
                         </h1>
 
                         <TypingSubtitle />

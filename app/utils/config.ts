@@ -1,7 +1,10 @@
 export const siteConfig = {
     name: 'Nguyen Long Dang',
+    brand: 'ndlabdev',
     avatar: 'https://up2client.com/envato/arya-stark/html/main-file/light-mode/layout_two/background-snow-img/assets/images/home-images/portfolio-girl.jpg',
     title: 'Full-Stack Web Developer',
+    email: 'longdang0412@gmail.com',
+    phone: '038 9747 179',
     roles: [
         'Full-Stack Web Developer',
         'Frontend Developer',

@@ -1,7 +1,7 @@
 <template>
-    <aside class="w-full lg:w-96 shrink-0">
+    <aside class="w-full lg:w-96 shrink-0 mt-17">
         <!-- Sticky wrapper -->
-        <div class="sticky top-22">
+        <div class="sticky top-36">
             <!-- Profile Card -->
             <div class="relative bg-white rounded-3xl shadow p-6 pt-20 text-center">
                 <!-- Avatar floating -->
@@ -18,8 +18,8 @@
                 </div>
 
                 <!-- Name -->
-                <h3 class="mt-2 text-xl font-semibold text-neutral-900">
-                    {{ siteConfig.name }}
+                <h3 class="mt-2 text-2xl font-semibold text-neutral-900">
+                    {{ siteConfig.brand }}
                 </h3>
 
                 <!-- Roles (typewriter) -->

@@ -1,14 +1,5 @@
 <script setup lang="ts">
 
-// Roles list
-const roles = [
-    'Full-Stack Web Developer',
-    'Frontend Engineer',
-    'Backend Engineer',
-    'API Architect',
-    'Problem Solver'
-]
-
 // Reactive text
 const text = ref('')
 
@@ -25,7 +16,7 @@ const PAUSE_BEFORE_DELETE = 1500 // ms
 const PAUSE_BEFORE_NEXT = 400 // ms
 
 function typewriter() {
-    const current = roles[roleIndex]!
+    const current = siteConfig.roles[roleIndex]!
 
     if (typing) {
     // Forward typing
@@ -41,7 +32,7 @@ function typewriter() {
         text.value = current.slice(0, --charIndex)
         if (charIndex === 0) {
             typing = true
-            roleIndex = (roleIndex + 1) % roles.length
+            roleIndex = (roleIndex + 1) % siteConfig.roles.length
             timer = window.setTimeout(typewriter, PAUSE_BEFORE_NEXT)
             return
         }
