@@ -26,7 +26,8 @@ useHead({
     ],
     link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-        { rel: 'canonical', href: siteUrl }
+        { rel: 'canonical', href: siteUrl },
+        { rel: 'preload', as: 'image', href: '/snow-bg.jpg' }
     ],
     script: [
         {
@@ -75,12 +76,3 @@ useHead({
         </NuxtLayout>
     </UApp>
 </template>
-
-<style>
-@import 'tailwindcss';
-@import '@nuxt/ui';
-
-@theme {
-    --font-sans: 'IBM Plex Sans', sans-serif;
-}
-</style>

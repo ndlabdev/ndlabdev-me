@@ -1,0 +1,7 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+@import './keyframes.css';
+
+@theme {
+    --font-sans: 'IBM Plex Sans', sans-serif;
+}

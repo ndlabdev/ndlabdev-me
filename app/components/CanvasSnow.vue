@@ -1,4 +1,3 @@
-<!-- components/CanvasSnow.vue -->
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref } from 'vue'
 
