@@ -1,5 +1,5 @@
 <template>
-    <aside class="w-full lg:w-96 shrink-0 mt-17">
+    <aside class="w-full lg:w-80 lg:block hidden shrink-0 mt-17">
         <!-- Sticky wrapper -->
         <div class="sticky top-36">
             <!-- Profile Card -->

@@ -13,7 +13,7 @@ const navItems = [
            bg-white border-neutral-200
            dark:bg-neutral-900/75 dark:border-neutral-700"
     >
-        <div class="container mx-auto px-4 flex h-16 items-center justify-between">
+        <div class="px-6 flex h-16 items-center justify-between">
             <!-- Logo -->
             <NuxtLink
                 to="/"
