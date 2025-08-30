@@ -105,13 +105,35 @@ export const siteConfig = {
         }
     ],
 
+    // Experience
+    experience: [
+        {
+            date: '2018 – 2021',
+            title: 'Information Technology Student · Nha Trang University',
+            description: 'Studied software development, databases, and computer science fundamentals in the College of Information Technology program.',
+            icon: 'i-heroicons-academic-cap'
+        },
+        {
+            date: '2021 – 2023',
+            title: 'Full-Stack Developer · Widosoft',
+            description: 'Worked on multiple web projects for Japanese clients, including an online English learning platform and entertainment-related applications such as a billiards management system.',
+            icon: 'i-heroicons-code-bracket'
+        },
+        {
+            date: '2023 – Present',
+            title: 'Full-Stack Developer · Screen 1 Technologies',
+            description: 'Developing data analytics solutions to help marketers capture, analyze, and optimize user behavior across websites, powering insights similar to ListenLayer’s tracking platform.',
+            icon: 'i-heroicons-briefcase'
+        }
+    ],
+
     // Social Links
     socials: [
         { name: 'github', url: 'https://github.com/ndlabdev', icon: 'i-simple-icons-github', class: 'social-github' },
         { name: 'linkedin', url: 'https://www.linkedin.com/in/dang-nguyen-long/', icon: 'i-simple-icons-linkedin', class: 'social-linkedin' },
         { name: 'facebook', url: 'https://www.facebook.com/nguyen.long.ang.2024', icon: 'i-simple-icons-facebook', class: 'social-facebook' },
         { name: 'twitter', url: 'https://x.com/ngNguyen430794', icon: 'i-simple-icons-x', class: 'social-twitter' },
-        { name: 'instagram', url: 'https://instagram.com/ndlabdev', icon: 'i-simple-icons-instagram', class: 'social-instagram' },
+        { name: 'instagram', url: 'https://www.instagram.com/nguyenlongdang04121999/', icon: 'i-simple-icons-instagram', class: 'social-instagram' },
         { name: 'email', url: 'mailto:longdang0412@gmail.com', icon: 'i-heroicons-envelope', class: 'social-email' }
     ]
 }

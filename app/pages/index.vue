@@ -6,6 +6,7 @@
             <SectionAboutSection />
             <SectionSkillsSection />
             <SectionProjectsSection />
+            <SectionExperienceSection />
         </div>
 
         <!-- Sidebar -->
