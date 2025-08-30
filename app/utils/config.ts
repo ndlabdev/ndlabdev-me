@@ -81,6 +81,30 @@ export const siteConfig = {
         { label: 'ESLint', url: 'https://eslint.org/' }
     ],
 
+    // Projects
+    projects: [
+        {
+            title: 'Millionaire Quiz',
+            description: 'A “Who Wants to Be a Millionaire?”–style quiz game built with Nuxt 4, TypeScript, and TailwindCSS.',
+            image: '/millionaire-quiz.png',
+            tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
+            links: {
+                github: 'https://github.com/ndlabdev/millionaire-quiz',
+                live: 'https://millionaire-quiz-seven.vercel.app/'
+            }
+        },
+        {
+            title: 'Movie Discovery App',
+            description: 'Movie discovery app using Next.js, TypeScript, TailwindCSS and TMDB API.',
+            image: '/movie-discovery.png',
+            tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'TMDB API'],
+            links: {
+                github: 'https://github.com/ndlabdev/nextjs-movie',
+                live: 'https://nextjs-movie-woad.vercel.app/'
+            }
+        }
+    ],
+
     // Social Links
     socials: [
         { name: 'github', url: 'https://github.com/ndlabdev', icon: 'i-simple-icons-github', class: 'social-github' },
