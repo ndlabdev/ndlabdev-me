@@ -6,50 +6,42 @@
         </h2>
 
         <!-- Description -->
-        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed">
+        <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
             I am a passionate <span class="font-semibold text-primary">Full-Stack Web Developer</span> with a strong
             focus on building modern, scalable, and user-friendly applications. With experience across both
             frontend and backend, I enjoy turning ideas into reality, writing clean code, and solving
             challenging problems that make an impact.
         </p>
 
-        <!-- Highlights -->
-        <ul class="mt-6 space-y-3 text-neutral-700 dark:text-neutral-300">
-            <li class="flex items-start gap-3">
+        <!-- Personal Info -->
+        <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-neutral-700 dark:text-neutral-300">
+            <div
+                v-for="(info, index) in siteConfig.personalInfo"
+                :key="index"
+                class="flex items-start gap-2"
+            >
                 <UIcon
-                    name="i-heroicons-check-circle"
-                    class="text-primary size-5 shrink-0 mt-0.5"
+                    :name="info.icon"
+                    class="text-primary size-5 shrink-0"
                 />
-                <span>Proficient in <span class="font-medium">Nuxt 3, Vue, TypeScript, and Tailwind CSS</span></span>
-            </li>
-            <li class="flex items-start gap-3">
-                <UIcon
-                    name="i-heroicons-check-circle"
-                    class="text-primary size-5 shrink-0 mt-0.5"
-                />
-                <span>Strong understanding of <span class="font-medium">REST APIs, backend development, and databases</span></span>
-            </li>
-            <li class="flex items-start gap-3">
-                <UIcon
-                    name="i-heroicons-check-circle"
-                    class="text-primary size-5 shrink-0 mt-0.5"
-                />
-                <span>Hands-on experience with <span class="font-medium">cloud platforms & DevOps tools</span></span>
-            </li>
-            <li class="flex items-start gap-3">
-                <UIcon
-                    name="i-heroicons-check-circle"
-                    class="text-primary size-5 shrink-0 mt-0.5"
-                />
-                <span>Passionate about <span class="font-medium">UI/UX design and performance optimization</span></span>
-            </li>
-            <li class="flex items-start gap-3">
-                <UIcon
-                    name="i-heroicons-check-circle"
-                    class="text-primary size-5 shrink-0 mt-0.5"
-                />
-                <span>A continuous learner who loves exploring <span class="font-medium">new technologies</span></span>
-            </li>
-        </ul>
+
+                <span>
+                    <span class="font-semibold">{{ info.label }}:</span>&nbsp;
+                    <template v-if="info.link">
+                        <a
+                            :href="info.link"
+                            target="_blank"
+                            class="hover:text-primary transition-colors"
+                        >
+                            {{ info.value }}
+                        </a>
+                    </template>
+
+                    <template v-else>
+                        {{ info.value }}
+                    </template>
+                </span>
+            </div>
+        </div>
     </section>
 </template>
