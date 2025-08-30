@@ -43,5 +43,41 @@
                 </span>
             </div>
         </div>
+
+        <!-- Highlights -->
+        <div class="mt-8">
+            <h3 class="text-lg font-bold text-neutral-900 dark:text-neutral-100 mb-3">
+                Professional Highlights
+            </h3>
+
+            <ul class="space-y-3 text-neutral-700 dark:text-neutral-300">
+                <li
+                    v-for="(item, i) in siteConfig.highlights"
+                    :key="i"
+                    class="flex items-start gap-3"
+                >
+                    <UIcon
+                        name="i-heroicons-star"
+                        class="text-primary size-5 flex-none shrink-0 mt-0.5"
+                    />
+
+                    <!-- Render text with highlights -->
+                    <span>
+                        <template
+                            v-for="(part, j) in splitText(item.text, item.highlight)"
+                            :key="j"
+                        >
+                            <span
+                                v-if="item.highlight?.includes(part)"
+                                class="font-medium"
+                            >
+                                {{ part }}
+                            </span>
+                            <span v-else>{{ part }}</span>
+                        </template>
+                    </span>
+                </li>
+            </ul>
+        </div>
     </section>
 </template>

@@ -41,6 +41,30 @@ export const siteConfig = {
         { label: 'Location', value: 'Nha Trang City, Khanh Hoa Province, Vietnam', icon: 'i-heroicons-map-pin', link: 'https://goo.gl/maps/HK8e9BBwU8Q2' }
     ],
 
+    // Highlights
+    highlights: [
+        {
+            text: 'Focus on writing clean, maintainable, and scalable code for both frontend and backend applications.',
+            highlight: ['clean, maintainable, and scalable code']
+        },
+        {
+            text: 'Enjoy tackling complex problems and turning them into simple, user-friendly solutions.',
+            highlight: ['complex problems']
+        },
+        {
+            text: 'Experienced in team collaboration, contributing effectively to meet deadlines and deliver quality projects.',
+            highlight: ['team collaboration']
+        },
+        {
+            text: 'Keen on continuous learning and staying updated with new technologies in web development.',
+            highlight: ['continuous learning']
+        },
+        {
+            text: 'Pay attention to performance and user experience to ensure products run smoothly and are enjoyable to use.',
+            highlight: ['performance and user experience']
+        }
+    ],
+
     // Skills
     skills: <SkillGroup[]> [
         {
