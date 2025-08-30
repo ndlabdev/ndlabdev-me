@@ -66,10 +66,10 @@ export const siteConfig = {
         {
             category: 'Tools & DevOps',
             items: [
-                { label: 'GitHub', icon: 'i-logos-github-icon' },
+                { label: 'GitHub', icon: 'i-logos-github-icon', invertDark: true },
                 { label: 'Docker', icon: 'i-logos-docker-icon' },
-                { label: 'AWS', icon: 'i-logos-aws' },
-                { label: 'Vercel', icon: 'i-logos-vercel-icon' }
+                { label: 'AWS', icon: 'i-logos-aws', invertDark: true },
+                { label: 'Vercel', icon: 'i-logos-vercel-icon', invertDark: true }
             ]
         }
     ],
