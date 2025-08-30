@@ -4,6 +4,7 @@
         <div class="flex-1 space-y-6">
             <SectionHeroSection />
             <SectionAboutSection />
+            <SectionSkillsSection />
         </div>
 
         <!-- Sidebar -->
