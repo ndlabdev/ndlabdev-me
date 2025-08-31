@@ -1,7 +1,7 @@
 <template>
     <aside class="w-full lg:w-80 lg:block hidden shrink-0 mt-17">
         <!-- Sticky wrapper -->
-        <div class="sticky top-36">
+        <div class="sticky top-36 space-y-4">
             <!-- Profile Card -->
             <div class="relative bg-white dark:bg-neutral-900 rounded-3xl shadow p-6 pt-20 text-center transition-colors">
                 <!-- Avatar floating -->
@@ -49,6 +49,49 @@
                         </ULink>
                     </UTooltip>
                 </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div
+                class="bg-white dark:bg-neutral-900 rounded-3xl shadow py-6 px-5 transition-colors"
+            >
+                <ul class="space-y-4">
+                    <li
+                        v-for="info in siteConfig.contactInfo.filter(i => ['Email', 'Phone', 'Location'].includes(i.title))"
+                        :key="info.title"
+                        class="flex items-start gap-3"
+                    >
+                        <!-- Icon -->
+                        <UIcon
+                            :name="info.icon"
+                            class="text-primary size-5 shrink-0 mt-0.5"
+                        />
+
+                        <!-- Content -->
+                        <div class="text-sm">
+                            <p
+                                class="font-semibold text-neutral-900 dark:text-neutral-100 transition-colors"
+                            >
+                                {{ info.title }}
+                            </p>
+
+                            <template v-if="info.link">
+                                <a
+                                    :href="info.link"
+                                    target="_blank"
+                                    class="text-neutral-600 dark:text-neutral-400 hover:text-primary transition-colors break-words"
+                                >
+                                    {{ info.value }}
+                                </a>
+                            </template>
+                            <template v-else>
+                                <p class="text-neutral-600 dark:text-neutral-400 break-words">
+                                    {{ info.value }}
+                                </p>
+                            </template>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </aside>

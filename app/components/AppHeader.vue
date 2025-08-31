@@ -74,6 +74,11 @@ onMounted(() => {
             <!-- Actions -->
             <div class="flex items-center gap-3">
                 <ColorModeButton />
+                <MobileMenuButton
+                    :nav-items="navItems"
+                    :active-section="activeSection"
+                    :scroll-to-section="scrollToSection"
+                />
             </div>
         </div>
     </header>
