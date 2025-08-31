@@ -1,10 +1,45 @@
 <script setup lang="ts">
+
 const navItems = [
-    { label: 'Home', to: '/' },
-    { label: 'Projects', to: '/projects' },
-    { label: 'About', to: '/about' },
-    { label: 'Contact', to: '/contact' }
+    { label: 'Home', to: '#hero' },
+    { label: 'About', to: '#about' },
+    { label: 'Skills', to: '#skills' },
+    { label: 'Projects', to: '#projects' },
+    { label: 'Experience', to: '#experience' },
+    { label: 'Contact', to: '#contact' }
 ]
+
+const activeSection = ref('#hero')
+
+function scrollToSection(id: string) {
+    const el = document.querySelector(id)
+    if (el) {
+        window.scrollTo({
+            top: el.getBoundingClientRect().top + window.scrollY - 80, // offset header
+            behavior: 'smooth'
+        })
+    }
+}
+
+// Auto detect active section
+onMounted(() => {
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    activeSection.value = `#${entry.target.id}`
+                }
+            })
+        },
+        {
+            threshold: 0.7
+        }
+    )
+
+    document.querySelectorAll<HTMLElement>('section[id]').forEach((el) => {
+        observer.observe(el)
+    })
+})
 </script>
 
 <template>
@@ -27,9 +62,10 @@ const navItems = [
                 <NuxtLink
                     v-for="item in navItems"
                     :key="item.label"
-                    :to="item.to"
+                    :href="item.to"
+                    :class="activeSection === item.to ? 'text-primary' : 'hover:text-primary'"
                     class="hover:text-primary transition-colors font-medium"
-                    active-class="text-primary"
+                    @click="scrollToSection(item.to)"
                 >
                     {{ item.label }}
                 </NuxtLink>

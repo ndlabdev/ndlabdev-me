@@ -50,7 +50,7 @@ useHead({
     ],
     htmlAttrs: {
         lang: 'en',
-        class: 'nuxt-ui-scrollbars'
+        class: 'nuxt-ui-scrollbars scroll-smooth'
     },
     bodyAttrs: {
         class: 'bg-cover bg-center bg-fixed',

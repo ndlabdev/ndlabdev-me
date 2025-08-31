@@ -38,7 +38,7 @@ export const siteConfig = {
         { label: 'Education', value: 'Nha Trang University', icon: 'i-heroicons-academic-cap' },
         { label: 'Nationality', value: 'Vietnamese', icon: 'i-heroicons-flag' },
         { label: 'Languages', value: 'Vietnamese, English', icon: 'i-heroicons-language' },
-        { label: 'Location', value: 'Nha Trang City, Khanh Hoa Province, Vietnam', icon: 'i-heroicons-map-pin', link: 'https://goo.gl/maps/HK8e9BBwU8Q2' }
+        { label: 'Location', value: 'Nha Trang City, Khanh Hoa Province, Vietnam', icon: 'i-heroicons-map-pin', link: 'https://maps.app.goo.gl/XCoMHu1gKKchK73T7' }
     ],
 
     // Highlights

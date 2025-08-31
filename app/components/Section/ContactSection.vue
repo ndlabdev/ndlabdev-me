@@ -98,7 +98,10 @@ ${siteConfig.brand || 'Portfolio Website'} Contact Form
 </script>
 
 <template>
-    <section class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 mt-12">
+    <section
+        id="contact"
+        class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 mt-12 scroll-mt-20"
+    >
         <!-- Title -->
         <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
             Contact Me

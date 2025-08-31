@@ -1,6 +1,9 @@
 <template>
     <!-- Hero section -->
-    <section class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8">
+    <section
+        id="hero"
+        class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 scroll-mt-32"
+    >
         <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
             <!-- Avatar -->
             <NuxtImg
