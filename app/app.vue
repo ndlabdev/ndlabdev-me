@@ -48,6 +48,10 @@ useHead({
             })
         }
     ],
+    htmlAttrs: {
+        lang: 'en',
+        class: 'nuxt-ui-scrollbars'
+    },
     bodyAttrs: {
         class: 'bg-cover bg-center bg-fixed',
         style: 'background-image: url(\'/snow-bg.jpg\');'

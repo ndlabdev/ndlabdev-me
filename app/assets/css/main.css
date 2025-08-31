@@ -6,6 +6,20 @@
     --font-sans: 'IBM Plex Sans', sans-serif;
 }
 
+.nuxt-ui-scrollbars ::-webkit-scrollbar {
+    background-color: transparent;
+    height: .6em;
+    width: .6em;
+}
+
+.nuxt-ui-scrollbars ::-webkit-scrollbar-thumb {
+    border-radius: .6em;
+    background-color: var(--color-slate-300);
+}
+
+.nuxt-ui-scrollbars ::-webkit-scrollbar-track {
+    background-color: var(--color-slate-100);
+}
 .social-github:hover   {
     @apply bg-neutral-900 text-white;
 }

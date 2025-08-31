@@ -1,9 +1,30 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui'],
+    modules: [
+        '@nuxt/eslint',
+        '@nuxt/image',
+        '@nuxt/ui',
+        ['nuxt-mail', {
+            message: {
+                to: process.env.SMTP_AUTH_USER
+            },
+            smtp: {
+                host: process.env.SMTP_HOST,
+                port: process.env.SMTP_PORT,
+                auth: {
+                    user: process.env.SMTP_AUTH_USER,
+                    pass: process.env.SMTP_AUTH_PASS
+                }
+            }
+        }]
+    ],
     devtools: { enabled: true },
-
     css: ['@/assets/css/main.css'],
+    router: {
+        options: {
+            scrollBehaviorType: 'smooth'
+        }
+    },
     compatibilityDate: '2025-07-15',
     eslint: {
         config: {

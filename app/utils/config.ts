@@ -159,5 +159,30 @@ export const siteConfig = {
         { name: 'twitter', url: 'https://x.com/ngNguyen430794', icon: 'i-simple-icons-x', class: 'social-twitter' },
         { name: 'instagram', url: 'https://www.instagram.com/nguyenlongdang04121999/', icon: 'i-simple-icons-instagram', class: 'social-instagram' },
         { name: 'email', url: 'mailto:longdang0412@gmail.com', icon: 'i-heroicons-envelope', class: 'social-email' }
+    ],
+
+    // Contact info
+    contactInfo: [
+        {
+            icon: 'i-heroicons-envelope',
+            title: 'Email',
+            description: 'Feel free to reach out via email',
+            value: 'longdang0412@gmail.com',
+            link: 'mailto:longdang0412@gmail.com'
+        },
+        {
+            icon: 'i-heroicons-phone',
+            title: 'Phone',
+            description: 'Available for quick calls or messages',
+            value: '+84 389 747 179',
+            link: 'tel:+84389747179'
+        },
+        {
+            icon: 'i-heroicons-map-pin',
+            title: 'Location',
+            description: 'Currently based in',
+            value: 'Nha Trang City, Khanh Hoa Province, Vietnam',
+            link: null
+        }
     ]
 }
