@@ -13,6 +13,7 @@
                         height="128"
                         format="webp"
                         quality="80"
+                        provider="ipx"
                         class="w-32 h-32 rounded-full ring-4 ring-primary-100 shadow-lg"
                     />
                 </div>

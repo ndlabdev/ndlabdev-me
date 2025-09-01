@@ -25,6 +25,7 @@ function scrollToSection(id: string) {
                 height="128"
                 format="webp"
                 quality="80"
+                provider="ipx"
                 sizes="128px sm:160px lg:192px"
                 class="rounded-full ring-4 ring-primary-100 shadow"
             />
