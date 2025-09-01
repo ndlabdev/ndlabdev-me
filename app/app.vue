@@ -3,7 +3,7 @@ const siteName = 'ndlab.dev'
 const siteUrl = 'https://ndlab.dev'
 const siteTitle = 'NDLab – Personal Profile & Portfolio'
 const siteDescription = 'Personal website of Nguyen Long Dang – Developer, creator, and problem solver. Showcasing projects, skills, and career journey.'
-const siteImage = `${siteUrl}/og-image.png`
+const siteImage = `${siteUrl}/og-image.webp`
 
 useHead({
     title: siteTitle,
@@ -25,7 +25,10 @@ useHead({
         { name: 'twitter:image', content: siteImage }
     ],
     link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+        { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/site.webmanifest' },
         { rel: 'canonical', href: siteUrl },
         { rel: 'preload', as: 'image', href: '/snow-bg.jpg' }
     ],
@@ -40,7 +43,7 @@ useHead({
                 'url': siteUrl,
                 'sameAs': [
                     'https://github.com/ndlabdev',
-                    'https://linkedin.com/in/ndlabdev'
+                    'https://linkedin.com/in/dang-nguyen-long/'
                 ],
                 'jobTitle': 'Software Developer',
                 'description': siteDescription,

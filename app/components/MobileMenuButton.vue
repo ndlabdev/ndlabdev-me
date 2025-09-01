@@ -37,7 +37,7 @@ function handleNavClick(id: string) {
                 <!-- Profile -->
                 <div class="relative text-center px-6 pt-10 pb-6 border-b border-neutral-200 dark:border-neutral-700">
                     <NuxtImg
-                        :src="siteConfig.avatar"
+                        :src="siteConfig.avatar || siteConfig.placeholderAvatar"
                         :alt="siteConfig.name"
                         width="96"
                         height="96"

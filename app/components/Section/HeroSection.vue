@@ -19,7 +19,7 @@ function scrollToSection(id: string) {
         <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
             <!-- Avatar -->
             <NuxtImg
-                :src="siteConfig.avatar"
+                :src="siteConfig.avatar || siteConfig.placeholderAvatar"
                 :alt="siteConfig.name"
                 width="128"
                 height="128"

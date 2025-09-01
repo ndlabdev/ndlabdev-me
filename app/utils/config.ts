@@ -15,7 +15,8 @@ export const siteConfig = {
     // Basic info
     name: 'Nguyen Long Dang',
     brand: 'ndlabdev',
-    avatar: 'https://up2client.com/envato/arya-stark/html/main-file/light-mode/layout_two/background-snow-img/assets/images/home-images/portfolio-girl.jpg',
+    avatar: '',
+    placeholderAvatar: 'https://placehold.co/200x200/png?text=ND',
     title: 'Full-Stack Web Developer',
 
     // Roles

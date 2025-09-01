@@ -7,7 +7,7 @@
                 <!-- Avatar floating -->
                 <div class="absolute inset-x-0 -top-16 flex justify-center">
                     <NuxtImg
-                        :src="siteConfig.avatar"
+                        :src="siteConfig.avatar || siteConfig.placeholderAvatar"
                         :alt="siteConfig.name"
                         width="128"
                         height="128"
