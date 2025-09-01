@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const siteName = 'ndlab.dev'
-const siteUrl = 'https://ndlab.dev'
+const url = useRequestURL()
+const siteName = url.host
+const siteUrl = url.origin
 const siteTitle = 'NDLab – Personal Profile & Portfolio'
 const siteDescription = 'Personal website of Nguyen Long Dang – Developer, creator, and problem solver. Showcasing projects, skills, and career journey.'
 const siteImage = `${siteUrl}/og-image.webp`
