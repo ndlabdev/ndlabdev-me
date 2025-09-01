@@ -30,6 +30,7 @@ function handleNavClick(id: string) {
         <UButton
             icon="i-heroicons-bars-3"
             class="lg:hidden"
+            aria-label="Open menu"
         />
 
         <template #content>

@@ -41,9 +41,10 @@
                         </span>
 
                         <!-- External doc link -->
-                        <a
+                        <ULink
                             v-if="skill.doc"
                             :href="skill.doc"
+                            :aria-label="`Open ${skill.label} documentation`"
                             target="_blank"
                             rel="noopener noreferrer"
                             class="absolute top-2 right-2 text-neutral-400 hover:text-primary transition-colors"
@@ -52,7 +53,7 @@
                                 name="i-heroicons-arrow-top-right-on-square"
                                 class="size-4"
                             />
-                        </a>
+                        </ULink>
                     </div>
                 </div>
             </div>
@@ -74,6 +75,7 @@
                     v-for="(skill, i) in siteConfig.extraSkills"
                     :key="i"
                     :href="skill.url"
+                    :aria-label="`Open ${skill.label} documentation`"
                     target="_blank"
                     class="px-3 py-1 rounded-full text-sm border border-neutral-300 dark:border-neutral-700
              text-neutral-700 dark:text-neutral-300

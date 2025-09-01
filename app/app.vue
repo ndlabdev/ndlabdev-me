@@ -55,11 +55,6 @@ useHead({
         lang: 'en',
         class: 'nuxt-ui-scrollbars scroll-smooth'
     }
-
-    // bodyAttrs: {
-    //     class: 'bg-cover bg-center bg-fixed',
-    //     style: 'background-image: url(\'/snow-bg.webp\');'
-    // }
 })
 </script>
 
@@ -82,6 +77,7 @@ useHead({
                     src="/snow-bg.webp"
                     format="webp"
                     quality="70"
+                    alt="Snow background"
                     class="fixed inset-0 -z-10 h-full w-full object-cover"
                     priority
                 />

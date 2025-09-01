@@ -159,6 +159,7 @@ ${siteConfig.brand || 'Portfolio Website'} Contact Form
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62807.80470188593!2d109.1631875!3d12.2387911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170674e8a0e24c5%3A0x19a2b4f81d3f63c!2zTmhhIFRyYW5nLCBLaGFuaCBIb2EsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1703340000000!5m2!1sen!2s"
                 allowfullscreen
                 loading="lazy"
+                title="Google Map showing my office location"
                 referrerpolicy="no-referrer-when-downgrade"
             />
         </div>
