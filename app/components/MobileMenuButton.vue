@@ -2,6 +2,7 @@
 interface NavItem {
     label: string
     to: string
+    icon: string
 }
 
 const props = defineProps<{
@@ -74,17 +75,22 @@ function handleNavClick(id: string) {
 
                 <!-- Navigation -->
                 <nav class="flex-1 px-4 py-6 space-y-2">
-                    <button
+                    <NuxtLink
                         v-for="item in props.navItems"
                         :key="item.label"
-                        class="w-full flex items-center px-4 py-2 rounded-lg font-medium transition-colors"
+                        :href="item.to"
                         :class="props.activeSection === item.to
                             ? 'bg-primary/10 text-primary'
                             : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800'"
+                        class="w-full flex items-center gap-3 px-4 py-2 rounded-lg font-medium transition-colors"
                         @click="handleNavClick(item.to)"
                     >
+                        <UIcon
+                            :name="item.icon"
+                            class="size-5 shrink-0"
+                        />
                         {{ item.label }}
-                    </button>
+                    </NuxtLink>
                 </nav>
 
                 <!-- Contact Info -->

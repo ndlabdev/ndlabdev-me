@@ -100,7 +100,7 @@ ${siteConfig.brand || 'Portfolio Website'} Contact Form
 <template>
     <section
         id="contact"
-        class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 mt-12 scroll-mt-20"
+        class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 scroll-mt-20"
     >
         <!-- Title -->
         <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
@@ -231,6 +231,7 @@ ${siteConfig.brand || 'Portfolio Website'} Contact Form
                 <UButton
                     type="submit"
                     loading-auto
+                    icon="i-heroicons-paper-airplane"
                     class="w-full md:w-auto px-6 py-2.5 text-sm font-semibold rounded-xl"
                 >
                     Send Message

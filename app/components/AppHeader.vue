@@ -1,12 +1,12 @@
 <script setup lang="ts">
 
 const navItems = [
-    { label: 'Home', to: '#hero' },
-    { label: 'About', to: '#about' },
-    { label: 'Skills', to: '#skills' },
-    { label: 'Projects', to: '#projects' },
-    { label: 'Experience', to: '#experience' },
-    { label: 'Contact', to: '#contact' }
+    { label: 'Home', to: '#hero', icon: 'i-heroicons-home' },
+    { label: 'About', to: '#about', icon: 'i-heroicons-user' },
+    { label: 'Skills', to: '#skills', icon: 'i-heroicons-cpu-chip' },
+    { label: 'Projects', to: '#projects', icon: 'i-heroicons-briefcase' },
+    { label: 'Experience', to: '#experience', icon: 'i-heroicons-academic-cap' },
+    { label: 'Contact', to: '#contact', icon: 'i-heroicons-envelope' }
 ]
 
 const activeSection = ref('#hero')
@@ -32,7 +32,7 @@ onMounted(() => {
             })
         },
         {
-            threshold: 0.7
+            threshold: 0.6
         }
     )
 

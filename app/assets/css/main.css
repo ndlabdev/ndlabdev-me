@@ -9,7 +9,7 @@
 .nuxt-ui-scrollbars ::-webkit-scrollbar {
     background-color: transparent;
     height: .6em;
-    width: .6em;
+    width: .3em;
 }
 
 .nuxt-ui-scrollbars ::-webkit-scrollbar-thumb {

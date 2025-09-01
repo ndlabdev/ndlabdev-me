@@ -1,3 +1,15 @@
+<script setup lang="ts">
+function scrollToSection(id: string) {
+    const el = document.querySelector(id)
+    if (el) {
+        window.scrollTo({
+            top: el.getBoundingClientRect().top + window.scrollY - 80, // offset header
+            behavior: 'smooth'
+        })
+    }
+}
+</script>
+
 <template>
     <!-- Hero section -->
     <section
@@ -34,18 +46,27 @@
                 </p>
 
                 <!-- Call-to-action -->
-                <div class="mt-6 flex gap-3">
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <!-- Download CV -->
                     <UButton
-                        to="/projects"
+                        href="/resume.pdf"
+                        target="_blank"
+                        color="primary"
                         variant="solid"
+                        icon="i-heroicons-arrow-down-tray"
+                        class="px-6 py-2.5 font-medium rounded-xl"
                     >
-                        View Projects
+                        Download CV
                     </UButton>
 
+                    <!-- Contact Section Scroll -->
                     <UButton
-                        to="/contact"
                         color="info"
                         variant="outline"
+                        to="#contact"
+                        icon="i-heroicons-envelope"
+                        class="px-6 py-2.5 font-medium rounded-xl"
+                        @click.prevent="scrollToSection('#contact')"
                     >
                         Contact Me
                     </UButton>
