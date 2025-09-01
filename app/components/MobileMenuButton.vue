@@ -44,7 +44,7 @@ function handleNavClick(id: string) {
                         height="96"
                         format="webp"
                         quality="80"
-                        provider="ipx"
+                        fit="cover"
                         class="w-24 h-24 rounded-full ring-4 ring-primary-100 shadow mx-auto"
                     />
 
