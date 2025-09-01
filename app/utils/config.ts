@@ -15,7 +15,7 @@ export const siteConfig = {
     // Basic info
     name: 'Nguyen Long Dang',
     brand: 'ndlabdev',
-    avatar: '',
+    avatar: '/avatar_url.png',
     placeholderAvatar: 'https://placehold.co/200x200/png?text=ND',
     title: 'Full-Stack Web Developer',
 

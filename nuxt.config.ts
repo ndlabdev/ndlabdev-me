@@ -4,6 +4,7 @@ export default defineNuxtConfig({
         '@nuxt/eslint',
         '@nuxt/image',
         '@nuxt/ui',
+        '@nuxtjs/sitemap',
         'nuxt-vitalizer',
         ['nuxt-mail', {
             message: {
@@ -26,6 +27,10 @@ export default defineNuxtConfig({
             scrollBehaviorType: 'smooth'
         }
     },
+    site: {
+        url: 'https://ndlab.dev',
+        name: 'NDLab'
+    },
     features: {
         inlineStyles: true
     },
@@ -34,6 +39,16 @@ export default defineNuxtConfig({
         config: {
             stylistic: true
         }
+    },
+    sitemap: {
+        urls: [
+            {
+                loc: '/',
+                changefreq: 'monthly',
+                priority: 1,
+                lastmod: new Date().toISOString()
+            }
+        ]
     },
     vitalizer: {
         disableStylesheets: 'entry',
