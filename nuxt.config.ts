@@ -26,6 +26,9 @@ export default defineNuxtConfig({
             scrollBehaviorType: 'smooth'
         }
     },
+    features: {
+        inlineStyles: true
+    },
     compatibilityDate: '2025-07-15',
     eslint: {
         config: {
