@@ -25,7 +25,7 @@ function scrollToSection(id: string) {
                 height="128"
                 format="webp"
                 quality="80"
-                class="w-32 h-32 object-cover rounded-full ring-4 ring-primary-100 shadow"
+                class="min-w-32 min-h-32 object-cover rounded-full ring-4 ring-primary-100 shadow"
             />
 
             <!-- Text -->

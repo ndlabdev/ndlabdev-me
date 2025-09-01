@@ -44,7 +44,7 @@ function handleNavClick(id: string) {
                         height="96"
                         format="webp"
                         quality="80"
-                        class="w-32 h-32 object-cover rounded-full ring-4 ring-primary-100 shadow mx-auto"
+                        class="min-w-24 min-h-24 object-cover rounded-full ring-4 ring-primary-100 shadow mx-auto"
                     />
 
                     <h3 class="mt-3 text-lg font-bold text-neutral-900 dark:text-neutral-100">
