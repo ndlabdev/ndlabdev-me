@@ -72,18 +72,16 @@ useHead({
         }"
     >
         <NuxtLayout>
-            <div class="relative min-h-screen overflow-hidden">
-                <NuxtImg
-                    src="/snow-bg.webp"
-                    format="webp"
-                    quality="70"
-                    alt="Snow background"
-                    class="fixed inset-0 -z-10 h-full w-full object-cover"
-                    priority
-                />
+            <NuxtImg
+                src="/snow-bg.webp"
+                format="webp"
+                quality="70"
+                alt="Snow background"
+                class="fixed inset-0 -z-10 h-full w-full object-cover"
+                priority
+            />
 
-                <NuxtPage />
-            </div>
+            <NuxtPage />
 
             <ClientOnly>
                 <CanvasSnow />

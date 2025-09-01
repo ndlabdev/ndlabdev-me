@@ -233,7 +233,7 @@ ${siteConfig.brand || 'Portfolio Website'} Contact Form
                     type="submit"
                     loading-auto
                     icon="i-heroicons-paper-airplane"
-                    class="w-full md:w-auto px-6 py-2.5 text-sm font-semibold rounded-xl"
+                    class="px-6 py-2.5 text-sm font-semibold rounded-xl"
                 >
                     Send Message
                 </UButton>

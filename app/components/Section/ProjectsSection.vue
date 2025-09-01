@@ -9,20 +9,20 @@
         </h2>
 
         <!-- Grid Projects -->
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
             <div
                 v-for="(project, i) in siteConfig.projects"
                 :key="i"
-                class="rounded-xl border border-neutral-200 dark:border-neutral-700
-               bg-neutral-50 dark:bg-neutral-800 overflow-hidden
-               hover:border-primary hover:shadow-md transition-colors flex flex-col"
+                class="h-full flex flex-col rounded-xl border border-neutral-200 dark:border-neutral-700
+                bg-neutral-50 dark:bg-neutral-800 overflow-hidden
+                hover:border-primary hover:shadow-md transition-colors"
             >
                 <!-- Thumbnail -->
                 <NuxtImg
                     :src="project.image"
                     :alt="project.title"
                     format="webp"
-                    class="w-full h-40 sm:h-48 object-cover"
+                    class="w-full object-cover aspect-video"
                     sizes="sm:100vw md:50vw lg:33vw"
                 />
 
@@ -46,7 +46,7 @@
                         </span>
                     </h3>
 
-                    <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1 flex-1">
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1 flex-1 line-clamp-3">
                         {{ project.description }}
                     </p>
 

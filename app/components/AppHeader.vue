@@ -18,6 +18,12 @@ function scrollToSection(id: string) {
             top: el.getBoundingClientRect().top + window.scrollY - 80, // offset header
             behavior: 'smooth'
         })
+
+        if (id === '#hero') {
+            history.replaceState(null, '', '/')
+        } else {
+            history.replaceState(null, '', id)
+        }
     }
 }
 
@@ -27,7 +33,14 @@ onMounted(() => {
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    activeSection.value = `#${entry.target.id}`
+                    const id = `#${entry.target.id}`
+                    activeSection.value = id
+
+                    if (id === '#hero') {
+                        history.replaceState(null, '', '/')
+                    } else {
+                        history.replaceState(null, '', id)
+                    }
                 }
             })
         },
