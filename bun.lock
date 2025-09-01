@@ -10,6 +10,7 @@
         "eslint": "^9.0.0",
         "nuxt": "^4.0.3",
         "nuxt-mail": "^7.0.1",
+        "nuxt-vitalizer": "^1.0.0",
         "typescript": "^5.6.3",
         "valibot": "^1.1.0",
         "vue": "^3.5.18",
@@ -1507,6 +1508,8 @@
     "nuxt-alias-path": ["nuxt-alias-path@2.0.0", "", {}, "sha512-rkitqBhqyW+UKWAGHAzwHmIWnZ5FLICSkiPdO/vHllKXG7lqtD7Dtnc+a2HNblD5iVNT6jwI+v7gajBLuUa+Zw=="],
 
     "nuxt-mail": ["nuxt-mail@7.0.1", "", { "dependencies": { "@nuxt/kit": "^3.17.4", "fs-extra": "^11.3.0", "h3": "^1.15.3", "lodash-es": "^4.17.21", "nodemailer": "^7.0.3", "nuxt-alias-path": "^2.0.0", "parse-packagejson-name": "^1.0.1" } }, "sha512-EcHyqYgZ+Yz88VikSF4dnl/5mvsgPl2LiOM+lf1a5ReWJsNA0kMdoylK7IoPmb8fvLru2IMV+/nbhF/E2yGP2g=="],
+
+    "nuxt-vitalizer": ["nuxt-vitalizer@1.0.0", "", { "dependencies": { "@nuxt/kit": "^4.0.3", "defu": "^6.1.4", "knitwork": "^1.2.0" } }, "sha512-+U+sLlJsbaLilRIQ/mKaIpWtwTLQlkIt8qbLVxaejWk+nX6Fzj8BzrZM/ONSTAsYZB2ieFSDkCaLpct4aqztIA=="],
 
     "nypm": ["nypm@0.6.1", "", { "dependencies": { "citty": "^0.1.6", "consola": "^3.4.2", "pathe": "^2.0.3", "pkg-types": "^2.2.0", "tinyexec": "^1.0.1" }, "bin": { "nypm": "dist/cli.mjs" } }, "sha512-hlacBiRiv1k9hZFiphPUkfSQ/ZfQzZDzC+8z0wL3lvDAOUu/2NnChkKuMoMjNur/9OpKuz2QsIeiPVN0xM5Q0w=="],
 

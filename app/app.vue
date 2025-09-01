@@ -30,8 +30,7 @@ useHead({
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/site.webmanifest' },
-        { rel: 'canonical', href: siteUrl },
-        { rel: 'preload', as: 'image', href: '/snow-bg.jpg' }
+        { rel: 'canonical', href: siteUrl }
     ],
     script: [
         {
@@ -55,11 +54,12 @@ useHead({
     htmlAttrs: {
         lang: 'en',
         class: 'nuxt-ui-scrollbars scroll-smooth'
-    },
-    bodyAttrs: {
-        class: 'bg-cover bg-center bg-fixed',
-        style: 'background-image: url(\'/snow-bg.jpg\');'
     }
+
+    // bodyAttrs: {
+    //     class: 'bg-cover bg-center bg-fixed',
+    //     style: 'background-image: url(\'/snow-bg.webp\');'
+    // }
 })
 </script>
 
@@ -77,7 +77,18 @@ useHead({
         }"
     >
         <NuxtLayout>
-            <NuxtPage />
+            <div class="relative min-h-screen overflow-hidden">
+                <NuxtImg
+                    src="/snow-bg.webp"
+                    format="webp"
+                    quality="70"
+                    class="fixed inset-0 -z-10 h-full w-full object-cover"
+                    priority
+                />
+
+                <NuxtPage />
+            </div>
+
             <ClientOnly>
                 <CanvasSnow />
             </ClientOnly>

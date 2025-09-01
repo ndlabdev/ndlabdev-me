@@ -4,6 +4,7 @@ export default defineNuxtConfig({
         '@nuxt/eslint',
         '@nuxt/image',
         '@nuxt/ui',
+        'nuxt-vitalizer',
         ['nuxt-mail', {
             message: {
                 to: process.env.SMTP_AUTH_USER
@@ -29,6 +30,14 @@ export default defineNuxtConfig({
     eslint: {
         config: {
             stylistic: true
+        }
+    },
+    vitalizer: {
+        disableStylesheets: 'entry',
+        delayHydration: {
+            hydrateOnEvents: ['mousemove', 'scroll', 'keydown', 'click', 'touchstart', 'wheel'],
+            idleCallbackTimeout: 8000,
+            postIdleTimeout: 4000
         }
     }
 })
