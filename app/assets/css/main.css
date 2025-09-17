@@ -29,14 +29,8 @@
 .social-facebook:hover {
     @apply bg-primary-600 text-white;
 }
-.social-twitter:hover  {
-    @apply bg-neutral-800 text-white;
-}
 .social-instagram:hover {
     @apply bg-pink-500 text-white;
-}
-.social-youtube:hover  {
-    @apply bg-error-600 text-white;
 }
 .social-email:hover    {
     @apply bg-emerald-600 text-white;
