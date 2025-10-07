@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt'
+
 const url = useRequestURL()
 const siteName = url.host
 const siteUrl = url.origin
@@ -88,4 +90,6 @@ useHead({
             </ClientOnly>
         </NuxtLayout>
     </UApp>
+
+    <Analytics />
 </template>
