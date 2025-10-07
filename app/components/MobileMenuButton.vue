@@ -79,11 +79,10 @@ function handleNavClick(id: string) {
                     <NuxtLink
                         v-for="item in props.navItems"
                         :key="item.label"
-                        :href="item.to"
                         :class="props.activeSection === item.to
                             ? 'bg-primary/10 text-primary'
                             : 'text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800'"
-                        class="w-full flex items-center gap-3 px-4 py-2 rounded-lg font-medium transition-colors"
+                        class="w-full flex items-center gap-3 px-4 py-2 rounded-lg font-medium transition-colors cursor-pointer"
                         @click="handleNavClick(item.to)"
                     >
                         <UIcon

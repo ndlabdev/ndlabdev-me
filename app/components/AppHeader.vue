@@ -12,46 +12,41 @@ const navItems = [
 const activeSection = ref('#hero')
 
 function scrollToSection(id: string) {
-    const el = document.querySelector(id)
+    const el = document.querySelector(id) as HTMLElement | null
     if (el) {
         window.scrollTo({
-            top: el.getBoundingClientRect().top + window.scrollY - 80, // offset header
+            top: el.offsetTop - 80,
             behavior: 'smooth'
         })
-
-        if (id === '#hero') {
-            history.replaceState(null, '', '/')
-        } else {
-            history.replaceState(null, '', id)
-        }
     }
 }
 
-// Auto detect active section
-onMounted(() => {
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const id = `#${entry.target.id}`
-                    activeSection.value = id
+function detectActiveSection() {
+    const sections = Array.from(document.querySelectorAll('section[id]')) as HTMLElement[]
+    const scrollPos = window.scrollY + 100
 
-                    if (id === '#hero') {
-                        history.replaceState(null, '', '/')
-                    } else {
-                        history.replaceState(null, '', id)
-                    }
-                }
-            })
-        },
-        {
-            threshold: 0.6
+    let currentSection = '#hero'
+
+    for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i]
+        if (!section) continue
+
+        if (scrollPos >= section.offsetTop) {
+            currentSection = `#${section.id}`
+            break
         }
-    )
+    }
 
-    document.querySelectorAll<HTMLElement>('section[id]').forEach((el) => {
-        observer.observe(el)
-    })
+    activeSection.value = currentSection
+}
+
+onMounted(() => {
+    detectActiveSection()
+    window.addEventListener('scroll', detectActiveSection, { passive: true })
+})
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', detectActiveSection)
 })
 </script>
 
@@ -75,9 +70,8 @@ onMounted(() => {
                 <NuxtLink
                     v-for="item in navItems"
                     :key="item.label"
-                    :href="item.to"
                     :class="activeSection === item.to ? 'text-primary' : 'hover:text-primary'"
-                    class="hover:text-primary transition-colors font-medium"
+                    class="hover:text-primary transition-colors font-medium  cursor-pointer"
                     @click="scrollToSection(item.to)"
                 >
                     {{ item.label }}

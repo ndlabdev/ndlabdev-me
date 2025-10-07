@@ -44,6 +44,12 @@ function scrollToSection(id: string) {
                     development.
                 </p>
 
+                <blockquote class="border-s-4 border-accented ps-4 italic">
+                    <p class="my-5 leading-7 text-pretty">
+                        The best software isn’t the one with the most features, but the one with the fewest flaws and the clearest purpose.
+                    </p>
+                </blockquote>
+
                 <!-- Call-to-action -->
                 <div class="mt-6 flex flex-wrap gap-3">
                     <!-- Download CV -->
