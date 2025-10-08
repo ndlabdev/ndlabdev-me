@@ -1,25 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    modules: [
-        '@nuxt/eslint',
-        '@nuxt/image',
-        '@nuxt/ui',
-        '@nuxtjs/sitemap',
-        'nuxt-vitalizer',
-        ['nuxt-mail', {
-            message: {
-                to: process.env.SMTP_AUTH_USER
-            },
-            smtp: {
-                host: process.env.SMTP_HOST,
-                port: process.env.SMTP_PORT,
-                auth: {
-                    user: process.env.SMTP_AUTH_USER,
-                    pass: process.env.SMTP_AUTH_PASS
-                }
+    modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxtjs/sitemap', 'nuxt-vitalizer', ['nuxt-mail', {
+        message: {
+            to: process.env.SMTP_AUTH_USER
+        },
+        smtp: {
+            host: process.env.SMTP_HOST,
+            port: process.env.SMTP_PORT,
+            auth: {
+                user: process.env.SMTP_AUTH_USER,
+                pass: process.env.SMTP_AUTH_PASS
             }
-        }]
-    ],
+        }
+    }], 'nuxt-gtag'],
     devtools: { enabled: true },
     css: ['@/assets/css/main.css'],
     router: {
@@ -39,6 +32,10 @@ export default defineNuxtConfig({
         config: {
             stylistic: true
         }
+    },
+    gtag: {
+        enabled: process.env.NODE_ENV === 'production',
+        id: 'G-D33X1BSE9N'
     },
     sitemap: {
         urls: [
