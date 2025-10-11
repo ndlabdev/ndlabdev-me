@@ -127,6 +127,15 @@ export const siteConfig = {
                 github: 'https://github.com/ndlabdev/nextjs-movie',
                 live: 'https://nextjs-movie-woad.vercel.app/'
             }
+        },
+        {
+            title: 'NDLab — Tech Blog',
+            description: 'A personal technology blog built with Laravel 12, Filament v4, and TailwindCSS, featuring articles about web engineering, backend design, and performance optimization. It includes a custom admin panel, SEO integration, analytics, and user interactions such as comments and bookmarks.',
+            image: '/ndlab-blog.png',
+            tech: ['Laravel 12', 'Filament v4', 'Tailwind CSS', 'MySQL', 'Redis'],
+            links: {
+                live: 'https://ndlab.blog/'
+            }
         }
     ],
 
