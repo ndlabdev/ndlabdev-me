@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { Analytics } from '@vercel/analytics/nuxt'
 
-const url = useRequestURL()
-const siteName = url.host
-const siteUrl = url.origin
 const siteTitle = 'NDLab – Personal Profile & Portfolio'
 const siteDescription = 'Personal website of Nguyen Long Dang – Developer, creator, and problem solver. Showcasing projects, skills, and career journey.'
-const siteImage = `${siteUrl}/og-image.webp`
+const siteImage = `${siteConfig.siteUrl}/og-image.png`
 
 useHead({
     title: siteTitle,
@@ -15,10 +12,10 @@ useHead({
 
         // Open Graph (Facebook, LinkedIn)
         { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: siteName },
+        { property: 'og:site_name', content: siteConfig.siteName },
         { property: 'og:title', content: siteTitle },
         { property: 'og:description', content: siteDescription },
-        { property: 'og:url', content: siteUrl },
+        { property: 'og:url', content: siteConfig.siteUrl },
         { property: 'og:image', content: siteImage },
 
         // Twitter Card
@@ -32,7 +29,7 @@ useHead({
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'manifest', href: '/site.webmanifest' },
-        { rel: 'canonical', href: siteUrl }
+        { rel: 'canonical', href: siteConfig.siteUrl }
     ],
     script: [
         {
@@ -42,7 +39,7 @@ useHead({
                 '@context': 'https://schema.org',
                 '@type': 'Person',
                 'name': 'Nguyen Long Dang',
-                'url': siteUrl,
+                'url': siteConfig.siteUrl,
                 'sameAs': [
                     'https://github.com/ndlabdev',
                     'https://linkedin.com/in/dang-nguyen-long/'

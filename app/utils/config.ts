@@ -18,6 +18,8 @@ export const siteConfig = {
     avatar: '/avatar_url.png',
     placeholderAvatar: 'https://placehold.co/200x200/png?text=ND',
     title: 'Full-Stack Web Developer',
+    siteName: 'NDLab',
+    siteUrl: 'https://ndlab.dev',
 
     // Roles
     roles: [
