@@ -3,7 +3,7 @@ function scrollToSection(id: string) {
     const el = document.querySelector(id)
     if (el) {
         window.scrollTo({
-            top: el.getBoundingClientRect().top + window.scrollY - 80, // offset header
+            top: el.getBoundingClientRect().top + window.scrollY - 80,
             behavior: 'smooth'
         })
     }
@@ -11,13 +11,11 @@ function scrollToSection(id: string) {
 </script>
 
 <template>
-    <!-- Hero section -->
     <section
         id="hero"
         class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 scroll-mt-32"
     >
         <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-            <!-- Avatar -->
             <NuxtImg
                 :src="siteConfig.avatar || siteConfig.placeholderAvatar"
                 :alt="siteConfig.name"
@@ -28,7 +26,6 @@ function scrollToSection(id: string) {
                 class="min-w-32 h-32 object-cover rounded-full ring-4 ring-primary-100 shadow"
             />
 
-            <!-- Text -->
             <div>
                 <h1 class="text-3xl font-bold text-neutral-900 dark:text-neutral-100">
                     Hi there <span class="inline-block origin-[70%_70%] animate-[wave_2s_infinite]">👋</span>,
@@ -50,11 +47,9 @@ function scrollToSection(id: string) {
                     </p>
                 </blockquote>
 
-                <!-- Call-to-action -->
                 <div class="mt-6 flex flex-wrap gap-3">
-                    <!-- Download CV -->
                     <UButton
-                        href="/resume.pdf"
+                        href="/NGUYEN_LONG_DANG.pdf"
                         target="_blank"
                         color="primary"
                         variant="solid"
@@ -64,7 +59,6 @@ function scrollToSection(id: string) {
                         Download CV
                     </UButton>
 
-                    <!-- Contact Section Scroll -->
                     <UButton
                         color="info"
                         variant="outline"

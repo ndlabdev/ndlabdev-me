@@ -57,15 +57,59 @@ onBeforeUnmount(() => {
            dark:bg-neutral-900/75 dark:border-neutral-700"
     >
         <div class="px-6 flex h-16 items-center justify-between">
-            <!-- Logo -->
             <NuxtLink
                 to="/"
                 class="flex items-center gap-2 font-bold text-xl text-primary"
+                @click="scrollToSection('#hero')"
             >
-                <span class="font-mono">ndlab.dev</span>
+                <span class="inline-flex items-center gap-2 font-semibold select-none text-neutral-900 dark:text-white">
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 64 64"
+                        role="img"
+                        aria-label="NDLab logo"
+                        class="rounded-xl"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="ndlabGrad"
+                                x1="0"
+                                y1="0"
+                                x2="1"
+                                y2="1"
+                            >
+                                <stop
+                                    offset="0%"
+                                    stop-color="#111827"
+                                />
+                                <stop
+                                    offset="100%"
+                                    stop-color="#3f3f46"
+                                />
+                            </linearGradient>
+                        </defs>
+                        <rect
+                            x="0"
+                            y="0"
+                            width="64"
+                            height="64"
+                            rx="12"
+                            fill="url(#ndlabGrad)"
+                        />
+                        <path
+                            d="M18 46V18h6l16 20V18h6v28h-6L24 26v20h-6z"
+                            fill="#fff"
+                        />
+                    </svg>
+
+                    <span class="text-base">
+                        NDLab
+                    </span>
+                </span>
             </NuxtLink>
 
-            <!-- Navigation -->
             <nav class="hidden md:flex gap-6 text-neutral-700 dark:text-neutral-300">
                 <NuxtLink
                     v-for="item in navItems"
@@ -78,7 +122,6 @@ onBeforeUnmount(() => {
                 </NuxtLink>
             </nav>
 
-            <!-- Actions -->
             <div class="flex items-center gap-3">
                 <ColorModeButton />
                 <MobileMenuButton
