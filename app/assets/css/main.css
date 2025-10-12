@@ -3,7 +3,7 @@
 @import './keyframes.css';
 
 @theme {
-    --font-sans: 'IBM Plex Sans', sans-serif;
+    --font-sans: 'Quicksand', sans-serif;
 }
 
 .nuxt-ui-scrollbars ::-webkit-scrollbar {
