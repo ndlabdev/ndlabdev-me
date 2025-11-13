@@ -112,31 +112,131 @@ export const siteConfig = {
     projects: [
         {
             title: 'Millionaire Quiz',
-            description: 'A “Who Wants to Be a Millionaire?”–style quiz game built with Nuxt 4, TypeScript, and TailwindCSS.',
+            description: 'A “Who Wants to Be a Millionaire?”–style quiz game built with Nuxt 4, TypeScript, and Tailwind CSS. It features a progressive money ladder, lifelines, and a strongly typed game state that keeps the logic predictable and easy to extend.',
             image: '/millionaire-quiz.png',
             tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
             links: {
                 github: 'https://github.com/ndlabdev/millionaire-quiz',
                 live: 'https://millionaire-quiz-seven.vercel.app/'
+            },
+            details: {
+                role: 'Frontend engineer (Nuxt 4)',
+                year: '2025',
+                projectType: 'Personal project',
+                duration: 'Side project (~2–3 weeks of focused work)',
+                teamSize: 'Solo',
+                responsibilities: [
+                    'Designed the overall game flow, including question progression and money ladder logic.',
+                    'Implemented a strongly typed game state in TypeScript to handle questions, answers, lifelines, and game results.',
+                    'Built a responsive UI with Nuxt 4 and Tailwind CSS, including transitions between questions and result screens.',
+                    'Added accessibility-friendly behaviors such as focus management and keyboard navigation for answering questions.',
+                    'Structured the codebase into reusable composables so that the quiz engine can be reused for future games.'
+                ],
+                highlights: [
+                    'Implements classic lifelines (e.g. 50/50) using pure functions and a predictable state transition system.',
+                    'Uses Nuxt 4 and TypeScript together to enforce strict typing across components and game logic.',
+                    'Responsive layout that works cleanly on desktop, tablet, and mobile without layout shifts.',
+                    'Clear separation between game logic and UI presentation, making it easier to extend with new question sets or rules.',
+                    'Animations and feedback states (correct, incorrect, final result) that give the app a polished, game-like feel.'
+                ],
+                challenges: [
+                    'Balancing the complexity of game state transitions while keeping the codebase readable and maintainable.',
+                    'Ensuring that the lifelines could be triggered in any valid state without breaking the progression.',
+                    'Designing the question data model in a way that is easy to update and localize later.',
+                    'Managing transitions and timers without causing race conditions or inconsistent UI states.'
+                ],
+                outcomes: [
+                    'Deepened practical experience with Nuxt 4, composables, and TypeScript in a non-trivial stateful UI.',
+                    'Created a reusable quiz/game engine that can be adapted to other types of quizzes in future projects.',
+                    'Improved understanding of how to structure game logic separately from UI components for better testability.'
+                ]
             }
         },
         {
             title: 'Movie Discovery App',
-            description: 'Movie discovery app using Next.js, TypeScript, TailwindCSS and TMDB API.',
+            description: 'A movie discovery web application built with Next.js, TypeScript, Tailwind CSS, and the TMDB API. Users can browse popular and trending titles, search by keywords, and open detailed pages with rich movie information fetched from TMDB.',
             image: '/movie-discovery.png',
             tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'TMDB API'],
             links: {
                 github: 'https://github.com/ndlabdev/nextjs-movie',
                 live: 'https://nextjs-movie-woad.vercel.app/'
+            },
+            details: {
+                role: 'Frontend engineer (Next.js)',
+                year: '2025',
+                projectType: 'Personal project',
+                duration: 'Side project (~3–4 weeks, iterated in multiple passes)',
+                teamSize: 'Solo',
+                responsibilities: [
+                    'Integrated the TMDB API to fetch popular, trending, and searched movies with proper typing on API responses.',
+                    'Implemented search with debouncing to avoid spamming the API while keeping the UI responsive.',
+                    'Built movie listing grids, detail pages, and navigation structure using Next.js and Tailwind CSS.',
+                    'Handled loading, error, and empty states in a user-friendly way for different network conditions.',
+                    'Optimized images and layout to reduce cumulative layout shift and improve perceived performance.'
+                ],
+                highlights: [
+                    'Uses a combination of server-side rendering and client-side data fetching for fast initial loads and dynamic updates.',
+                    'Strongly typed TMDB response models in TypeScript to prevent runtime errors when mapping API data into UI components.',
+                    'Clean, scrollable layout that feels like a “mini streaming catalogue” with poster-focused design.',
+                    'Search experience that feels snappy thanks to debouncing and clear visual states (loading, no results, etc.).',
+                    'Modular component structure for movie cards, badges, and layout sections, making it easy to extend.'
+                ],
+                challenges: [
+                    'Designing a search experience that balances API rate limits with real-time feedback for the user.',
+                    'Normalizing TMDB data into a shape that works well across list views and detailed views.',
+                    'Keeping the UI visually consistent even when some movies return incomplete metadata from the API.',
+                    'Managing SEO and metadata for dynamic movie pages in a Next.js environment.'
+                ],
+                outcomes: [
+                    'Gained solid experience integrating a third-party REST API (TMDB) into a modern React/Next.js stack.',
+                    'Improved skills in API response modeling, error handling, and UI state management in TypeScript.',
+                    'Built a foundation that could be evolved into a more advanced movie or media tracking app in the future.'
+                ]
             }
         },
         {
             title: 'NDLab — Tech Blog',
-            description: 'A personal technology blog built with Laravel 12, Filament v4, and TailwindCSS, featuring articles about web engineering, backend design, and performance optimization. It includes a custom admin panel, SEO integration, analytics, and user interactions such as comments and bookmarks.',
+            description: 'A long-term personal technology blog platform focused on web engineering, backend architecture, and performance optimization. It is built with Laravel 12, Filament v4, and Tailwind CSS, with MySQL and Redis powering the data layer and caching strategy.',
             image: '/ndlab-blog.png',
             tech: ['Laravel 12', 'Filament v4', 'Tailwind CSS', 'MySQL', 'Redis'],
             links: {
                 live: 'https://ndlab.blog/'
+            },
+            details: {
+                role: 'Full-stack Engineer',
+                year: '2025',
+                projectType: 'Personal project',
+                duration: '2025 — Ongoing',
+                teamSize: 'Solo',
+                responsibilities: [
+                    'Designed MySQL schema for posts, categories, tags, series, comments, reactions, bookmarks, slug history, and analytics.',
+                    'Developed backend logic including CRUD, SEO middleware, fulltext search, and view/referrer tracking.',
+                    'Built Filament v4 admin panel with TipTap editor and SEO tools.',
+                    'Developed frontend with Blade and TailwindCSS focused on readability and SEO.',
+                    'Implemented Redis caching for performance improvements.',
+                    'Used Laravel Sail for local development environment.',
+                    'Deployed production infrastructure via Laravel Forge with queue workers and cron jobs.',
+                    'Integrated Resend for authentication-related emails.'
+                ],
+                highlights: [
+                    'Optimized performance via Redis caching.',
+                    'Advanced SEO with slug history and structured metadata.',
+                    'Clean and efficient admin panel via Filament v4.',
+                    'Responsive UI optimized for long-form reading.',
+                    'Stable deployment pipeline with Forge.'
+                ],
+                challenges: [
+                    'Implementing slug history with redirect logic.',
+                    'Optimizing MySQL fulltext search and analytics.',
+                    'Customizing TipTap editor for code-heavy posts.',
+                    'Maintaining consistent dev/prod environments via Sail & Forge.'
+                ],
+                outcomes: [
+                    'Scalable long-term platform for technical content.',
+                    'Fast response times and strong SEO performance.',
+                    'Reliable content management experience.',
+                    'Professional, maintainable deployment setup.'
+                ]
             }
         }
     ],

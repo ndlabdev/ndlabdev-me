@@ -92,6 +92,10 @@
                         >
                             <span>GitHub</span>
                         </UButton>
+
+                        <div class="flex-1" />
+
+                        <ModalProject :selected-project="project" />
                     </div>
                 </div>
             </div>
