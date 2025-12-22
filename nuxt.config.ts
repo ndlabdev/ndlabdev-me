@@ -37,6 +37,11 @@ export default defineNuxtConfig({
         enabled: process.env.NODE_ENV === 'production',
         id: 'G-D33X1BSE9N'
     },
+    image: {
+        cloudinary: {
+            baseURL: 'https://res.cloudinary.com/ndlab/image/upload'
+        }
+    },
     sitemap: {
         urls: [
             {

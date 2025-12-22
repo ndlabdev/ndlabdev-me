@@ -15,7 +15,7 @@ export const siteConfig = {
     // Basic info
     name: 'Nguyen Long Dang',
     brand: 'ndlabdev',
-    avatar: '/avatar_url.png',
+    avatar: '/v1766394686/ndlab-dev/avatar_url.png',
     placeholderAvatar: 'https://placehold.co/200x200/png?text=ND',
     title: 'Full-Stack Web Developer',
     siteName: 'NDLab',
@@ -113,7 +113,7 @@ export const siteConfig = {
         {
             title: 'Millionaire Quiz',
             description: 'A “Who Wants to Be a Millionaire?”–style quiz game built with Nuxt 4, TypeScript, and Tailwind CSS. It features a progressive money ladder, lifelines, and a strongly typed game state that keeps the logic predictable and easy to extend.',
-            image: '/millionaire-quiz.png',
+            image: '/v1766392565/ndlab-dev/millionaire-quiz.png',
             tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
             links: {
                 github: 'https://github.com/ndlabdev/millionaire-quiz',
@@ -155,7 +155,7 @@ export const siteConfig = {
         {
             title: 'Movie Discovery App',
             description: 'A movie discovery web application built with Next.js, TypeScript, Tailwind CSS, and the TMDB API. Users can browse popular and trending titles, search by keywords, and open detailed pages with rich movie information fetched from TMDB.',
-            image: '/movie-discovery.png',
+            image: '/v1766392567/ndlab-dev/movie-discovery.png',
             tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'TMDB API'],
             links: {
                 github: 'https://github.com/ndlabdev/nextjs-movie',
@@ -197,7 +197,7 @@ export const siteConfig = {
         {
             title: 'NDLab — Tech Blog',
             description: 'A long-term personal technology blog platform focused on web engineering, backend architecture, and performance optimization. It is built with Laravel 12, Filament v4, and Tailwind CSS, with MySQL and Redis powering the data layer and caching strategy.',
-            image: '/ndlab-blog.png',
+            image: '/v1766392565/ndlab-dev/ndlab-blog.png',
             tech: ['Laravel 12', 'Filament v4', 'Tailwind CSS', 'MySQL', 'Redis'],
             links: {
                 live: 'https://ndlab.blog/'

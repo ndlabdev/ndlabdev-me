@@ -72,12 +72,13 @@ useHead({
     >
         <NuxtLayout>
             <NuxtImg
-                src="/snow-bg.webp"
+                src="/v1766392567/ndlab-dev/snow-bg.webp"
                 format="webp"
                 quality="70"
                 alt="Snow background"
                 class="fixed inset-0 -z-10 h-full w-full object-cover"
                 priority
+                provider="cloudinary"
             />
 
             <NuxtPage />

@@ -24,6 +24,7 @@
                     format="webp"
                     class="w-full object-cover aspect-video"
                     sizes="sm:100vw md:50vw lg:33vw"
+                    provider="cloudinary"
                 />
 
                 <!-- Content -->
