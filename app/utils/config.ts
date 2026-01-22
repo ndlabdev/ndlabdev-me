@@ -153,44 +153,48 @@ export const siteConfig = {
             }
         },
         {
-            title: 'Movie Discovery App',
-            description: 'A movie discovery web application built with Next.js, TypeScript, Tailwind CSS, and the TMDB API. Users can browse popular and trending titles, search by keywords, and open detailed pages with rich movie information fetched from TMDB.',
-            image: '/v1766392567/ndlab-dev/movie-discovery.png',
-            tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'TMDB API'],
+            title: 'NDLab Admin Dashboard',
+            description: 'A modern SaaS admin dashboard template designed to accelerate development of admin interfaces and internal tools. Built with Next.js 16, TypeScript, shadcn/ui, and Tailwind CSS v4, featuring pre-built dashboards, RBAC user management, and production-ready architecture.',
+            image: '/v1769077679/ndlab-dev/ndlab-admin.webp',
+            tech: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'shadcn/ui', 'TanStack Table'],
             links: {
-                github: 'https://github.com/ndlabdev/nextjs-movie',
-                live: 'https://nextjs-movie-woad.vercel.app/'
+                live: 'https://next-saas-admin.vercel.app/'
             },
             details: {
-                role: 'Frontend engineer (Next.js)',
+                role: 'Frontend Engineer (Next.js)',
                 year: '2025',
                 projectType: 'Personal project',
-                duration: 'Side project (~3–4 weeks, iterated in multiple passes)',
+                duration: 'Side project (~4–6 weeks of focused development)',
                 teamSize: 'Solo',
                 responsibilities: [
-                    'Integrated the TMDB API to fetch popular, trending, and searched movies with proper typing on API responses.',
-                    'Implemented search with debouncing to avoid spamming the API while keeping the UI responsive.',
-                    'Built movie listing grids, detail pages, and navigation structure using Next.js and Tailwind CSS.',
-                    'Handled loading, error, and empty states in a user-friendly way for different network conditions.',
-                    'Optimized images and layout to reduce cumulative layout shift and improve perceived performance.'
+                    'Architected the overall dashboard structure using Next.js 16 App Router and Server Components.',
+                    'Built multiple dashboard variants including analytics, e-commerce, CRM, and kanban board views.',
+                    'Implemented user role management with granular permissions and RBAC support.',
+                    'Developed interactive data visualizations using Recharts for metrics and analytics.',
+                    'Created reusable UI components with shadcn/ui built on Radix UI primitives.',
+                    'Built advanced data tables with sorting, filtering, and pagination using TanStack Table.',
+                    'Implemented form handling with React Hook Form and Zod validation for type-safe inputs.'
                 ],
                 highlights: [
-                    'Uses a combination of server-side rendering and client-side data fetching for fast initial loads and dynamic updates.',
-                    'Strongly typed TMDB response models in TypeScript to prevent runtime errors when mapping API data into UI components.',
-                    'Clean, scrollable layout that feels like a “mini streaming catalogue” with poster-focused design.',
-                    'Search experience that feels snappy thanks to debouncing and clear visual states (loading, no results, etc.).',
-                    'Modular component structure for movie cards, badges, and layout sections, making it easy to extend.'
+                    'Uses Next.js 16 App Router with Server Components for optimal performance and SEO.',
+                    'Comprehensive component library built on shadcn/ui with consistent design tokens.',
+                    'Advanced data tables with TanStack Table supporting complex filtering and sorting operations.',
+                    'Type-safe form handling with React Hook Form and Zod schema validation.',
+                    'Responsive design optimized across desktop, tablet, and mobile breakpoints.',
+                    'Production-ready folder structure with security-focused routing patterns.',
+                    'Drag-and-drop calendar and real-time messaging UI components included.'
                 ],
                 challenges: [
-                    'Designing a search experience that balances API rate limits with real-time feedback for the user.',
-                    'Normalizing TMDB data into a shape that works well across list views and detailed views.',
-                    'Keeping the UI visually consistent even when some movies return incomplete metadata from the API.',
-                    'Managing SEO and metadata for dynamic movie pages in a Next.js environment.'
+                    'Designing a flexible component architecture that works across multiple dashboard use cases.',
+                    'Implementing RBAC with granular permissions while keeping the codebase maintainable.',
+                    'Balancing bundle size with feature richness when including multiple chart types and table variants.',
+                    'Creating a consistent design system that scales across dozens of components and pages.'
                 ],
                 outcomes: [
-                    'Gained solid experience integrating a third-party REST API (TMDB) into a modern React/Next.js stack.',
-                    'Improved skills in API response modeling, error handling, and UI state management in TypeScript.',
-                    'Built a foundation that could be evolved into a more advanced movie or media tracking app in the future.'
+                    'Created a production-ready admin template that significantly reduces boilerplate for new projects.',
+                    'Deepened expertise in Next.js 16, shadcn/ui, and modern React patterns.',
+                    'Built a scalable foundation suitable for SaaS products, internal tools, and client projects.',
+                    'Developed reusable patterns for authentication, authorization, and dashboard layouts.'
                 ]
             }
         },
