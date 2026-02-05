@@ -19,12 +19,13 @@ function scrollToSection(id: string) {
             <NuxtImg
                 :src="siteConfig.avatar || siteConfig.placeholderAvatar"
                 :alt="siteConfig.name"
-                width="128"
-                height="128"
+                width="512"
+                height="512"
                 format="webp"
-                quality="80"
+                quality="90"
                 fit="cover"
-                class="rounded-full ring-4 ring-primary-100 shadow"
+                densities="1x 2x"
+                class="size-32 rounded-full ring-4 ring-primary-100 shadow"
                 provider="cloudinary"
             />
 

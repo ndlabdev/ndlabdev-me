@@ -40,12 +40,13 @@ function handleNavClick(id: string) {
                     <NuxtImg
                         :src="siteConfig.avatar || siteConfig.placeholderAvatar"
                         :alt="siteConfig.name"
-                        width="96"
-                        height="96"
+                        width="384"
+                        height="384"
                         format="webp"
-                        quality="80"
+                        quality="90"
                         fit="cover"
-                        class="rounded-full ring-4 ring-primary-100 shadow mx-auto"
+                        densities="1x 2x"
+                        class="size-24 rounded-full ring-4 ring-primary-100 shadow mx-auto"
                         provider="cloudinary"
                     />
 
