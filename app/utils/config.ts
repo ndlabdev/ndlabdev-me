@@ -75,7 +75,7 @@ export const siteConfig = {
             items: [
                 { label: 'Nuxt 3', icon: 'i-logos-nuxt-icon', doc: 'https://nuxt.com/' },
                 { label: 'Next.js', icon: 'i-logos-nextjs-icon', doc: 'https://nextjs.org/', invertDark: true },
-                { label: 'TypeScript', icon: 'i-logos-typescript-icon', doc: 'https://www.typescriptlang.org/' },
+                { label: 'Svelte 5', icon: 'i-logos-svelte-icon', doc: 'https://svelte.dev/' },
                 { label: 'Tailwind CSS', icon: 'i-logos-tailwindcss-icon', doc: 'https://tailwindcss.com/' }
             ]
         },
@@ -93,6 +93,7 @@ export const siteConfig = {
         {
             category: 'Tools & DevOps',
             items: [
+                { label: 'TypeScript', icon: 'i-logos-typescript-icon', doc: 'https://www.typescriptlang.org/' },
                 { label: 'GitHub', icon: 'i-logos-github-icon', invertDark: true },
                 { label: 'Docker', icon: 'i-logos-docker-icon' },
                 { label: 'AWS', icon: 'i-logos-aws', invertDark: true },
@@ -110,48 +111,6 @@ export const siteConfig = {
 
     // Projects
     projects: [
-        {
-            title: 'Millionaire Quiz',
-            description: 'A “Who Wants to Be a Millionaire?”–style quiz game built with Nuxt 4, TypeScript, and Tailwind CSS. It features a progressive money ladder, lifelines, and a strongly typed game state that keeps the logic predictable and easy to extend.',
-            image: '/v1766392565/ndlab-dev/millionaire-quiz.png',
-            tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
-            links: {
-                github: 'https://github.com/ndlabdev/millionaire-quiz',
-                live: 'https://millionaire-quiz-seven.vercel.app/'
-            },
-            details: {
-                role: 'Frontend engineer (Nuxt 4)',
-                year: '2025',
-                projectType: 'Personal project',
-                duration: 'Side project (~2–3 weeks of focused work)',
-                teamSize: 'Solo',
-                responsibilities: [
-                    'Designed the overall game flow, including question progression and money ladder logic.',
-                    'Implemented a strongly typed game state in TypeScript to handle questions, answers, lifelines, and game results.',
-                    'Built a responsive UI with Nuxt 4 and Tailwind CSS, including transitions between questions and result screens.',
-                    'Added accessibility-friendly behaviors such as focus management and keyboard navigation for answering questions.',
-                    'Structured the codebase into reusable composables so that the quiz engine can be reused for future games.'
-                ],
-                highlights: [
-                    'Implements classic lifelines (e.g. 50/50) using pure functions and a predictable state transition system.',
-                    'Uses Nuxt 4 and TypeScript together to enforce strict typing across components and game logic.',
-                    'Responsive layout that works cleanly on desktop, tablet, and mobile without layout shifts.',
-                    'Clear separation between game logic and UI presentation, making it easier to extend with new question sets or rules.',
-                    'Animations and feedback states (correct, incorrect, final result) that give the app a polished, game-like feel.'
-                ],
-                challenges: [
-                    'Balancing the complexity of game state transitions while keeping the codebase readable and maintainable.',
-                    'Ensuring that the lifelines could be triggered in any valid state without breaking the progression.',
-                    'Designing the question data model in a way that is easy to update and localize later.',
-                    'Managing transitions and timers without causing race conditions or inconsistent UI states.'
-                ],
-                outcomes: [
-                    'Deepened practical experience with Nuxt 4, composables, and TypeScript in a non-trivial stateful UI.',
-                    'Created a reusable quiz/game engine that can be adapted to other types of quizzes in future projects.',
-                    'Improved understanding of how to structure game logic separately from UI components for better testability.'
-                ]
-            }
-        },
         {
             title: 'NDLab Admin Dashboard',
             description: 'A modern SaaS admin dashboard template designed to accelerate development of admin interfaces and internal tools. Built with Next.js 16, TypeScript, shadcn/ui, and Tailwind CSS v4, featuring pre-built dashboards, RBAC user management, and production-ready architecture.',
@@ -199,6 +158,52 @@ export const siteConfig = {
             }
         },
         {
+            title: 'SV5UI — Svelte 5 Component Library',
+            description: 'A modern, fully-typed UI component library designed for Svelte 5. Built with Tailwind CSS 4, OKLCH color tokens, and accessible headless primitives from Bits UI and Vaul Svelte. Features 20+ components with full TypeScript support and extensive customization options.',
+            image: null,
+            tech: ['Svelte 5', 'SvelteKit', 'Tailwind CSS 4', 'TypeScript', 'Bits UI'],
+            links: {
+                github: 'https://github.com/ndlabdev/sv5ui'
+            },
+            details: {
+                role: 'Frontend Engineer (Svelte)',
+                year: '2025',
+                projectType: 'Personal project',
+                duration: 'Side project (~3–4 weeks of focused development)',
+                teamSize: 'Solo',
+                responsibilities: [
+                    'Architected the component library structure using Svelte 5 with SvelteKit for documentation site.',
+                    'Built 20+ reusable components across categories: General, Layout, Data Display, Feedback, Navigation, and Overlay.',
+                    'Implemented accessible components using Bits UI and Vaul Svelte headless primitives.',
+                    'Designed a theming system using OKLCH color space with light and dark mode support.',
+                    'Integrated Iconify for access to 200,000+ icons across the component library.',
+                    'Created a global configuration system with per-instance overrides for maximum flexibility.',
+                    'Wrote comprehensive TypeScript types with exported prop types for developer experience.'
+                ],
+                highlights: [
+                    'Full TypeScript support with exported prop types for all components.',
+                    'Accessibility-first approach built on headless primitives from Bits UI.',
+                    'Modern theming system using OKLCH color space for perceptually uniform colors.',
+                    'Tailwind Variants integration for consistent component styling patterns.',
+                    'Extensive Iconify integration providing access to 200,000+ icons.',
+                    'Global configuration system allowing library-wide defaults with per-instance overrides.',
+                    'Light and dark mode support out of the box.'
+                ],
+                challenges: [
+                    'Designing a flexible API that balances ease of use with customization options.',
+                    'Ensuring accessibility compliance across all interactive components.',
+                    'Building a theming system that works seamlessly with Tailwind CSS 4 and OKLCH colors.',
+                    'Creating consistent component patterns while supporting Svelte 5 runes and new reactivity model.'
+                ],
+                outcomes: [
+                    'Created a production-ready component library that accelerates Svelte 5 development.',
+                    'Deepened expertise in Svelte 5 runes, Tailwind CSS 4, and accessible component design.',
+                    'Built reusable patterns for headless UI primitives that can be extended for future components.',
+                    'Published as an npm package for easy installation and community usage.'
+                ]
+            }
+        },
+        {
             title: 'NDLab — Tech Blog',
             description: 'A long-term personal technology blog platform focused on web engineering, backend architecture, and performance optimization. It is built with Laravel 12, Filament v4, and Tailwind CSS, with MySQL and Redis powering the data layer and caching strategy.',
             image: '/v1766392565/ndlab-dev/ndlab-blog.png',
@@ -240,6 +245,48 @@ export const siteConfig = {
                     'Fast response times and strong SEO performance.',
                     'Reliable content management experience.',
                     'Professional, maintainable deployment setup.'
+                ]
+            }
+        },
+        {
+            title: 'Millionaire Quiz',
+            description: 'A “Who Wants to Be a Millionaire?”–style quiz game built with Nuxt 4, TypeScript, and Tailwind CSS. It features a progressive money ladder, lifelines, and a strongly typed game state that keeps the logic predictable and easy to extend.',
+            image: '/v1766392565/ndlab-dev/millionaire-quiz.png',
+            tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
+            links: {
+                github: 'https://github.com/ndlabdev/millionaire-quiz',
+                live: 'https://millionaire-quiz-seven.vercel.app/'
+            },
+            details: {
+                role: 'Frontend engineer (Nuxt 4)',
+                year: '2025',
+                projectType: 'Personal project',
+                duration: 'Side project (~2–3 weeks of focused work)',
+                teamSize: 'Solo',
+                responsibilities: [
+                    'Designed the overall game flow, including question progression and money ladder logic.',
+                    'Implemented a strongly typed game state in TypeScript to handle questions, answers, lifelines, and game results.',
+                    'Built a responsive UI with Nuxt 4 and Tailwind CSS, including transitions between questions and result screens.',
+                    'Added accessibility-friendly behaviors such as focus management and keyboard navigation for answering questions.',
+                    'Structured the codebase into reusable composables so that the quiz engine can be reused for future games.'
+                ],
+                highlights: [
+                    'Implements classic lifelines (e.g. 50/50) using pure functions and a predictable state transition system.',
+                    'Uses Nuxt 4 and TypeScript together to enforce strict typing across components and game logic.',
+                    'Responsive layout that works cleanly on desktop, tablet, and mobile without layout shifts.',
+                    'Clear separation between game logic and UI presentation, making it easier to extend with new question sets or rules.',
+                    'Animations and feedback states (correct, incorrect, final result) that give the app a polished, game-like feel.'
+                ],
+                challenges: [
+                    'Balancing the complexity of game state transitions while keeping the codebase readable and maintainable.',
+                    'Ensuring that the lifelines could be triggered in any valid state without breaking the progression.',
+                    'Designing the question data model in a way that is easy to update and localize later.',
+                    'Managing transitions and timers without causing race conditions or inconsistent UI states.'
+                ],
+                outcomes: [
+                    'Deepened practical experience with Nuxt 4, composables, and TypeScript in a non-trivial stateful UI.',
+                    'Created a reusable quiz/game engine that can be adapted to other types of quizzes in future projects.',
+                    'Improved understanding of how to structure game logic separately from UI components for better testability.'
                 ]
             }
         }

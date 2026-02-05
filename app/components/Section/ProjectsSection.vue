@@ -19,12 +19,17 @@
             >
                 <!-- Thumbnail -->
                 <NuxtImg
+                    v-if="project.image"
                     :src="project.image"
                     :alt="project.title"
                     format="webp"
                     class="w-full object-cover aspect-video"
                     sizes="sm:100vw md:50vw lg:33vw"
                     provider="cloudinary"
+                />
+                <Placeholder
+                    v-else
+                    class="w-full aspect-video !m-0"
                 />
 
                 <!-- Content -->
@@ -47,9 +52,11 @@
                         </span>
                     </h3>
 
-                    <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1 flex-1 line-clamp-3">
+                    <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-1 line-clamp-3">
                         {{ project.description }}
                     </p>
+
+                    <div class="flex-1" />
 
                     <!-- Tech stack -->
                     <div class="mt-3 flex flex-wrap gap-2">
