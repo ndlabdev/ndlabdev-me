@@ -10,10 +10,11 @@
 
         <!-- Description -->
         <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
-            I am a passionate <span class="font-semibold text-primary">Full-Stack Web Developer</span> with a strong
-            focus on building modern, scalable, and user-friendly applications. With experience across both
-            frontend and backend, I enjoy turning ideas into reality, writing clean code, and solving
-            challenging problems that make an impact.
+            <span class="font-semibold text-primary">Software Engineer</span> with over 4 years of experience building
+            scalable web applications and data-driven platforms. Specialized in backend development with Node.js and AWS,
+            with a strong focus on designing event-driven architectures using RabbitMQ, Redis, and BigQuery.
+            Most recently built a real-time user behavior analytics platform that helps marketers capture, analyze,
+            and optimize user engagement across websites.
         </p>
 
         <!-- Personal Info -->

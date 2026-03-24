@@ -38,10 +38,9 @@ function scrollToSection(id: string) {
                 <TypingSubtitle />
 
                 <p class="mt-2 text-neutral-700 dark:text-neutral-300">
-                    Welcome to my personal website! I’m a developer who loves creating digital experiences
-                    that are not only functional but also intuitive and enjoyable to use. Here you’ll find
-                    my projects, ideas, and the journey I’m taking as I grow in the world of software
-                    development.
+                    Welcome to my personal website! I’m a Software Engineer who specializes in building
+                    scalable backend systems and data-driven platforms. Here you’ll find my projects, skills,
+                    and the journey I’m taking as I grow in the world of software engineering.
                 </p>
 
                 <blockquote class="border-s-4 border-accented ps-4 italic">

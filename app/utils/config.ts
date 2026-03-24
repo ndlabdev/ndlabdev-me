@@ -10,6 +10,13 @@ interface SkillGroup {
     items: SkillItem[]
 }
 
+export interface ExperienceItem {
+    date: string
+    title: string
+    description: string[]
+    icon: string
+}
+
 export const siteConfig = {
 
     // Basic info
@@ -17,15 +24,15 @@ export const siteConfig = {
     brand: 'ndlabdev',
     avatar: '/v1766394686/ndlab-dev/avatar_url.png',
     placeholderAvatar: 'https://placehold.co/200x200/png?text=ND',
-    title: 'Full-Stack Web Developer',
+    title: 'Software Engineer',
     siteName: 'NDLab',
     siteUrl: 'https://ndlab.dev',
 
     // Roles
     roles: [
-        'Full-Stack Web Developer',
-        'Frontend Developer',
-        'Backend Developer',
+        'Software Engineer',
+        'Backend Engineer',
+        'Data Pipeline Developer',
         'API Architect',
         'Problem Solver'
     ],
@@ -35,9 +42,8 @@ export const siteConfig = {
         { label: 'Name', value: 'Nguyen Long Dang', icon: 'i-heroicons-user' },
         { label: 'Email', value: 'longdang0412@gmail.com', icon: 'i-heroicons-envelope', link: 'mailto:longdang0412@gmail.com' },
         { label: 'Phone', value: '+84 389 747 179', icon: 'i-heroicons-phone', link: 'tel:+84389747179' },
-        { label: 'Freelance', value: 'Available', icon: 'i-heroicons-briefcase' },
-        { label: 'Job Title', value: 'Full-Stack Web Developer', icon: 'i-heroicons-code-bracket' },
-        { label: 'Experience', value: '3+ Years', icon: 'i-heroicons-academic-cap' },
+        { label: 'Job Title', value: 'Software Engineer', icon: 'i-heroicons-code-bracket' },
+        { label: 'Experience', value: '4+ Years', icon: 'i-heroicons-academic-cap' },
         { label: 'Education', value: 'Nha Trang University', icon: 'i-heroicons-academic-cap' },
         { label: 'Nationality', value: 'Vietnamese', icon: 'i-heroicons-flag' },
         { label: 'Languages', value: 'Vietnamese, English', icon: 'i-heroicons-language' },
@@ -73,30 +79,34 @@ export const siteConfig = {
         {
             category: 'Frontend',
             items: [
-                { label: 'Nuxt 3', icon: 'i-logos-nuxt-icon', doc: 'https://nuxt.com/' },
+                { label: 'Nuxt.js', icon: 'i-logos-nuxt-icon', doc: 'https://nuxt.com/' },
                 { label: 'Next.js', icon: 'i-logos-nextjs-icon', doc: 'https://nextjs.org/', invertDark: true },
                 { label: 'Svelte 5', icon: 'i-logos-svelte-icon', doc: 'https://svelte.dev/' },
+                { label: 'TypeScript', icon: 'i-logos-typescript-icon', doc: 'https://www.typescriptlang.org/' },
                 { label: 'Tailwind CSS', icon: 'i-logos-tailwindcss-icon', doc: 'https://tailwindcss.com/' }
             ]
         },
         {
             category: 'Backend',
             items: [
-                { label: 'NestJS', icon: 'i-logos-nestjs', doc: 'https://nestjs.com/' },
+                { label: 'Node.js', icon: 'i-logos-nodejs-icon', doc: 'https://nodejs.org/' },
+                { label: 'Express', icon: 'i-logos-express', doc: 'https://expressjs.com/', invertDark: true },
                 { label: 'Laravel', icon: 'i-logos-laravel', doc: 'https://laravel.com/' },
+                { label: 'NestJS', icon: 'i-logos-nestjs', doc: 'https://nestjs.com/' },
                 { label: 'Prisma', icon: 'i-logos-prisma', doc: 'https://www.prisma.io/', invertDark: true },
                 { label: 'PostgreSQL', icon: 'i-logos-postgresql', doc: 'https://www.postgresql.org/' },
+                { label: 'MySQL', icon: 'i-logos-mysql-icon', doc: 'https://www.mysql.com/' },
                 { label: 'Redis', icon: 'i-logos-redis', doc: 'https://redis.io/' },
-                { label: 'RabbitMQ', icon: 'i-logos-rabbitmq-icon', doc: 'https://www.rabbitmq.com/' }
+                { label: 'RabbitMQ', icon: 'i-logos-rabbitmq-icon', doc: 'https://www.rabbitmq.com/' },
+                { label: 'Google BigQuery', icon: 'i-logos-google-cloud', doc: 'https://cloud.google.com/bigquery' }
             ]
         },
         {
             category: 'Tools & DevOps',
             items: [
-                { label: 'TypeScript', icon: 'i-logos-typescript-icon', doc: 'https://www.typescriptlang.org/' },
-                { label: 'GitHub', icon: 'i-logos-github-icon', invertDark: true },
-                { label: 'Docker', icon: 'i-logos-docker-icon' },
                 { label: 'AWS', icon: 'i-logos-aws', invertDark: true },
+                { label: 'Docker', icon: 'i-logos-docker-icon' },
+                { label: 'GitHub Actions', icon: 'i-logos-github-actions', doc: 'https://github.com/features/actions' },
                 { label: 'Vercel', icon: 'i-logos-vercel-icon', invertDark: true }
             ]
         }
@@ -160,10 +170,11 @@ export const siteConfig = {
         {
             title: 'SV5UI — Svelte 5 Component Library',
             description: 'A modern, fully-typed UI component library designed for Svelte 5. Built with Tailwind CSS 4, OKLCH color tokens, and accessible headless primitives from Bits UI and Vaul Svelte. Features 20+ components with full TypeScript support and extensive customization options.',
-            image: null,
+            image: '/v1774346963/ndlab-dev/sv5ui.png',
             tech: ['Svelte 5', 'SvelteKit', 'Tailwind CSS 4', 'TypeScript', 'Bits UI'],
             links: {
-                github: 'https://github.com/ndlabdev/sv5ui'
+                github: 'https://github.com/ndlabdev/sv5ui',
+                live: 'https://sv5ui.vercel.app/'
             },
             details: {
                 role: 'Frontend Engineer (Svelte)',
@@ -293,23 +304,35 @@ export const siteConfig = {
     ],
 
     // Experience
-    experience: [
+    experience: <ExperienceItem[]>[
         {
             date: '2018 – 2021',
             title: 'Information Technology Student · Nha Trang University',
-            description: 'Studied software development, databases, and computer science fundamentals in the College of Information Technology program.',
+            description: [
+                'Completed coursework in software engineering, algorithms, data structures, database systems, and computer networking.',
+                'Built multiple full-stack web projects as part of academic coursework and independent study.'
+            ],
             icon: 'i-heroicons-academic-cap'
         },
         {
-            date: '2021 – 2023',
+            date: 'May 2021 – Mar 2023',
             title: 'Full-Stack Developer · Widosoft',
-            description: 'Worked on multiple web projects for Japanese clients, including an online English learning platform and entertainment-related applications such as a billiards management system.',
+            description: [
+                'Developed the admin system for Honrada, an English learning platform for beginners through intermediate learners, including student, teacher, and admin management modules.',
+                'Built the admin dashboard for a Billiards Club Management System with booking, player ranking, and multi-location management features.',
+                'Delivered additional full-stack web projects for Japanese clients, handling frontend and backend development and performance optimization.'
+            ],
             icon: 'i-heroicons-code-bracket'
         },
         {
-            date: '2023 – Present',
-            title: 'Full-Stack Developer · Screen 1 Technologies',
-            description: 'Developing data analytics solutions to help marketers capture, analyze, and optimize user behavior across websites, powering insights similar to ListenLayer’s tracking platform.',
+            date: 'Apr 2023 – Feb 2026',
+            title: 'Software Engineer · Screen1 Technologies',
+            description: [
+                'Built a real-time user behavior analytics platform similar to Google Analytics, enabling marketers to collect, process, and visualize user interaction data with customizable reports.',
+                'Implemented scalable backend services using Node.js and AWS (Lambda, SQS, RDS, S3, ECS, CloudWatch), and built event pipelines with RabbitMQ, Redis, and Pusher for real-time dashboard updates.',
+                'Integrated Google BigQuery for data warehousing and behavioral analytics, including automated Salesforce-to-BigQuery data pipelines for cross-platform reporting.',
+                'Optimized large-scale query performance and ensured system reliability and cost efficiency across cloud infrastructure.'
+            ],
             icon: 'i-heroicons-briefcase'
         }
     ],
