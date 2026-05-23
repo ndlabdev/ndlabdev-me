@@ -10,11 +10,18 @@
 
         <!-- Description -->
         <p class="text-neutral-700 dark:text-neutral-300 leading-relaxed mb-6">
-            <span class="font-semibold text-primary">Software Engineer</span> with over 4 years of experience building
-            scalable web applications and data-driven platforms. Specialized in backend development with Node.js and AWS,
-            with a strong focus on designing event-driven architectures using RabbitMQ, Redis, and BigQuery.
-            Most recently built a real-time user behavior analytics platform that helps marketers capture, analyze,
-            and optimize user engagement across websites.
+            <template
+                v-for="(part, j) in splitText(siteConfig.summary.text, siteConfig.summary.highlight)"
+                :key="j"
+            >
+                <span
+                    v-if="siteConfig.summary.highlight.includes(part)"
+                    class="font-semibold text-neutral-900 dark:text-neutral-100"
+                >
+                    {{ part }}
+                </span>
+                <template v-else>{{ part }}</template>
+            </template>
         </p>
 
         <!-- Personal Info -->

@@ -2,6 +2,10 @@
 import type { ExperienceItem } from '~/utils/config'
 
 const experiences = siteConfig.experience as ExperienceItem[]
+
+function normalizeLine(line: string | { text: string, highlight?: string[] }) {
+    return typeof line === 'string' ? { text: line, highlight: [] } : { text: line.text, highlight: line.highlight ?? [] }
+}
 </script>
 
 <template>
@@ -61,7 +65,20 @@ const experiences = siteConfig.experience as ExperienceItem[]
                                 class="flex items-start gap-2.5 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed"
                             >
                                 <span class="shrink-0 mt-1.5 size-1.5 rounded-full bg-primary/50" />
-                                <span>{{ line }}</span>
+                                <span>
+                                    <template
+                                        v-for="(part, j) in splitText(normalizeLine(line).text, normalizeLine(line).highlight)"
+                                        :key="j"
+                                    >
+                                        <span
+                                            v-if="normalizeLine(line).highlight.includes(part)"
+                                            class="font-semibold text-neutral-800 dark:text-neutral-200"
+                                        >
+                                            {{ part }}
+                                        </span>
+                                        <span v-else>{{ part }}</span>
+                                    </template>
+                                </span>
                             </li>
                         </ul>
                     </div>

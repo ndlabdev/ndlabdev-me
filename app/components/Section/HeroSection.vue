@@ -37,10 +37,19 @@ function scrollToSection(id: string) {
 
                 <TypingSubtitle />
 
-                <p class="mt-2 text-neutral-700 dark:text-neutral-300">
-                    Welcome to my personal website! I’m a Software Engineer who specializes in building
-                    scalable backend systems and data-driven platforms. Here you’ll find my projects, skills,
-                    and the journey I’m taking as I grow in the world of software engineering.
+                <p class="mt-2 text-neutral-700 dark:text-neutral-300 leading-relaxed">
+                    <template
+                        v-for="(part, j) in splitText(siteConfig.intro.text, siteConfig.intro.highlight)"
+                        :key="j"
+                    >
+                        <span
+                            v-if="siteConfig.intro.highlight.includes(part)"
+                            class="font-semibold text-neutral-900 dark:text-neutral-100"
+                        >
+                            {{ part }}
+                        </span>
+                        <template v-else>{{ part }}</template>
+                    </template>
                 </p>
 
                 <blockquote class="border-s-4 border-accented ps-4 italic">
