@@ -300,48 +300,6 @@ export const siteConfig = {
                     'Professional, maintainable deployment setup.'
                 ]
             }
-        },
-        {
-            title: 'Millionaire Quiz',
-            description: 'A “Who Wants to Be a Millionaire?”–style quiz game built with Nuxt 4, TypeScript, and Tailwind CSS. It features a progressive money ladder, lifelines, and a strongly typed game state that keeps the logic predictable and easy to extend.',
-            image: '/v1766392565/ndlab-dev/millionaire-quiz.png',
-            tech: ['Nuxt 4', 'TypeScript', 'Tailwind CSS'],
-            links: {
-                github: 'https://github.com/ndlabdev/millionaire-quiz',
-                live: 'https://millionaire-quiz-seven.vercel.app/'
-            },
-            details: {
-                role: 'Frontend engineer (Nuxt 4)',
-                year: '2025',
-                projectType: 'Personal project',
-                duration: 'Side project (~2–3 weeks of focused work)',
-                teamSize: 'Solo',
-                responsibilities: [
-                    'Designed the overall game flow, including question progression and money ladder logic.',
-                    'Implemented a strongly typed game state in TypeScript to handle questions, answers, lifelines, and game results.',
-                    'Built a responsive UI with Nuxt 4 and Tailwind CSS, including transitions between questions and result screens.',
-                    'Added accessibility-friendly behaviors such as focus management and keyboard navigation for answering questions.',
-                    'Structured the codebase into reusable composables so that the quiz engine can be reused for future games.'
-                ],
-                highlights: [
-                    'Implements classic lifelines (e.g. 50/50) using pure functions and a predictable state transition system.',
-                    'Uses Nuxt 4 and TypeScript together to enforce strict typing across components and game logic.',
-                    'Responsive layout that works cleanly on desktop, tablet, and mobile without layout shifts.',
-                    'Clear separation between game logic and UI presentation, making it easier to extend with new question sets or rules.',
-                    'Animations and feedback states (correct, incorrect, final result) that give the app a polished, game-like feel.'
-                ],
-                challenges: [
-                    'Balancing the complexity of game state transitions while keeping the codebase readable and maintainable.',
-                    'Ensuring that the lifelines could be triggered in any valid state without breaking the progression.',
-                    'Designing the question data model in a way that is easy to update and localize later.',
-                    'Managing transitions and timers without causing race conditions or inconsistent UI states.'
-                ],
-                outcomes: [
-                    'Deepened practical experience with Nuxt 4, composables, and TypeScript in a non-trivial stateful UI.',
-                    'Created a reusable quiz/game engine that can be adapted to other types of quizzes in future projects.',
-                    'Improved understanding of how to structure game logic separately from UI components for better testability.'
-                ]
-            }
         }
     ],
 
