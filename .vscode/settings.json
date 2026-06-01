@@ -25,6 +25,8 @@
     "editor.quickSuggestions": {
         "strings": "on"
     },
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.classFunctions": ["defineAppConfig"],
     // Extension: Volar
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {

@@ -1,54 +1,22 @@
 <script setup lang="ts">
-
-// ** VeeValidate Imports
 import type { FormSubmitEvent } from '@nuxt/ui'
-import { email, getDefaults, nonEmpty, object, optional, pipe, string, type InferOutput } from 'valibot'
+import { email, type InferOutput, minLength, nonEmpty, object, pipe, string } from 'valibot'
 
-// ** Label
-const contactLabel = {
-    name: 'Your Name',
-    phone: 'Phone Number',
-    email: 'Your Email',
-    subject: 'Subject',
-    message: 'Your Message'
-}
-
-// ** Schema
-const schema = object({
-    name: optional(pipe(
-        string(`${contactLabel.name} cannot be empty.`),
-        nonEmpty(`${contactLabel.name} cannot be empty.`)
-    ), ''),
-    email: optional(pipe(
-        string(`${contactLabel.email} cannot be empty.`),
-        email(`${contactLabel.email} is not a valid format.`),
-        nonEmpty(`${contactLabel.email} cannot be empty.`)
-    ), ''),
-    subject: optional(pipe(
-        string(`${contactLabel.subject} cannot be empty.`),
-        nonEmpty(`${contactLabel.subject} cannot be empty.`)
-    ), ''),
-    message: optional(pipe(
-        string(`${contactLabel.message} cannot be empty.`),
-        nonEmpty(`${contactLabel.message} cannot be empty.`)
-    ), '')
-
-})
-
-const defaultState = getDefaults(schema)
-
-// ** Types
-type IContactForm = InferOutput<typeof schema>
-
-// ** Reactive
-const state = reactive<Partial<IContactForm>>({ ...defaultState })
-
-// ** useHooks
 const mail = useMail()
 const toast = useToast()
+const { copy } = useCopy()
 
-// ** Methods
-async function onSubmit(event: FormSubmitEvent<IContactForm>) {
+const schema = object({
+    name: pipe(string(), nonEmpty('Enter your name'), minLength(2, 'Enter your name')),
+    email: pipe(string(), nonEmpty('Enter a valid email'), email('Enter a valid email')),
+    subject: pipe(string(), nonEmpty('Add a subject'), minLength(2, 'Add a subject')),
+    message: pipe(string(), nonEmpty('Write a message'), minLength(10, 'Min 10 characters'))
+})
+type Schema = InferOutput<typeof schema>
+
+const state = reactive<Partial<Schema>>({ name: '', email: '', subject: '', message: '' })
+
+async function onSubmit(event: FormSubmitEvent<Schema>) {
     try {
         await mail.send({
             from: event.data.email,
@@ -58,7 +26,7 @@ async function onSubmit(event: FormSubmitEvent<IContactForm>) {
 
 Hello ${siteConfig.name},
 
-You’ve received a new message via your portfolio website (${siteConfig.brand || 'Portfolio'}).
+You've received a new message via your portfolio website (${siteConfig.brand || 'Portfolio'}).
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -66,27 +34,28 @@ You’ve received a new message via your portfolio website (${siteConfig.brand |
 📧 Email: ${event.data.email}
 📝 Subject: ${event.data.subject}
 
-💬 Message:  
+💬 Message:
 ${event.data.message}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Please reply to the sender at your earliest convenience.
 
-Best regards,  
+Best regards,
 ${siteConfig.brand || 'Portfolio Website'} Contact Form
             `
         })
 
-        Object.assign(state, defaultState)
+        Object.assign(state, { name: '', email: '', subject: '', message: '' })
 
         toast.add({
             title: 'Message Sent',
-            description: 'Your message has been delivered. I’ll get back to you soon.',
-            icon: 'i-lucide-check-circle-2'
+            description: 'Your message has been delivered. I\'ll get back to you soon.',
+            icon: 'i-lucide-check-circle-2',
+            color: 'success'
         })
-    } catch (error) {
-        console.error(error)
+    } catch (e) {
+        console.error(e)
         toast.add({
             title: 'Error',
             description: 'Something went wrong. Please try again later.',
@@ -100,144 +69,132 @@ ${siteConfig.brand || 'Portfolio Website'} Contact Form
 <template>
     <section
         id="contact"
-        class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 scroll-mt-20"
+        class="section"
     >
-        <!-- Title -->
-        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-            Contact Me
-        </h2>
-        <p class="text-neutral-600 dark:text-neutral-400 mb-8">
-            Have a project in mind, want to collaborate, or just say hi? Let’s connect.
-        </p>
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="eyebrow"><span class="idx">05</span><span class="bar" />Contact</span>
+                <h2>Let's build something <span class="grad-text">reliable</span>.</h2>
+                <p>Open to backend, distributed-systems, and full-stack roles — and interesting collaborations.</p>
+                <span class="rule" />
+            </div>
 
-        <!-- Contact Info -->
-        <div class="grid sm:grid-cols-3 gap-6 mb-8">
-            <div
-                v-for="(info, i) in siteConfig.contactInfo"
-                :key="i"
-                class="bg-neutral-50 dark:bg-neutral-800 rounded-2xl p-5 text-center shadow-sm"
-            >
-                <UIcon
-                    :name="info.icon"
-                    class="text-primary size-7 mx-auto mb-2"
-                />
-
-                <!-- Title -->
-                <h3 class="font-semibold text-neutral-900 dark:text-neutral-100">
-                    {{ info.title }}
-                </h3>
-
-                <!-- Description -->
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                    {{ info.description }}
-                </p>
-
-                <!-- Value -->
-                <template v-if="info.link">
-                    <a
-                        :href="info.link"
-                        class="block mt-2 text-sm text-neutral-700 dark:text-neutral-300 hover:text-primary transition-colors break-all"
+            <div class="grid grid-cols-1 min-[1025px]:grid-cols-[0.85fr_1.15fr] gap-[22px] items-start">
+                <div
+                    class="reveal flex flex-col gap-[14px]"
+                    data-dir="left"
+                >
+                    <div
+                        v-for="info in siteConfig.contactInfo"
+                        :key="info.title"
+                        class="glass group flex items-center gap-4 px-[22px] py-[20px] transition-[transform,border-color] duration-300 ease-[var(--ease)] hover:-translate-y-[3px] hover:border-[rgba(var(--accent-rgb),0.4)]"
+                        :class="info.title !== 'Location' ? 'cursor-pointer' : ''"
+                        @click="info.title !== 'Location' && copy(info.value, info.title.toLowerCase())"
                     >
-                        {{ info.value }}
-                    </a>
-                </template>
+                        <span class="size-[44px] rounded-[12px] grid place-items-center bg-surface-2 border border-border-soft text-accent-3 shrink-0"><UIcon
+                            :name="info.icon"
+                            class="size-5"
+                        /></span>
+                        <div class="min-w-0">
+                            <div class="font-mono text-[11px] text-text-faint tracking-[0.08em] uppercase">
+                                {{ info.title }}
+                            </div>
+                            <div class="text-[14.5px] text-text-base mt-[2px] break-words">
+                                {{ info.value }}
+                            </div>
+                        </div>
+                        <UIcon
+                            v-if="info.title !== 'Location'"
+                            name="i-heroicons-clipboard-document"
+                            class="ml-auto size-4 shrink-0 opacity-40 group-hover:opacity-100"
+                        />
+                    </div>
 
-                <template v-else>
-                    <span
-                        class="block mt-2 text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed break-words"
+                    <div class="glass relative overflow-hidden rounded-[var(--r-md)] border border-border-soft h-[150px] mt-[2px]">
+                        <iframe
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps?q=Nha%20Trang%2C%20Vietnam&output=embed"
+                            title="Map of Nha Trang, Vietnam"
+                            class="w-full h-full border-0 dark:[filter:grayscale(1)_invert(0.92)_contrast(0.9)]"
+                        />
+                        <div class="absolute inset-0 pointer-events-none dark:[background:radial-gradient(ellipse_at_50%_50%,transparent_40%,rgba(10,11,15,0.35))]" />
+                    </div>
+                </div>
+
+                <UForm
+                    :schema="schema"
+                    :state="state"
+                    class="glass reveal p-[clamp(26px,3.5vw,40px)] grid grid-cols-1 sm:grid-cols-2 gap-[18px]"
+                    data-dir="right"
+                    @submit="onSubmit"
+                >
+                    <UFormField
+                        name="name"
+                        label="Name"
+                        :ui="formFieldUi"
                     >
-                        {{ info.value }}
-                    </span>
-                </template>
+                        <UInput
+                            v-model="state.name"
+                            placeholder="Jane Doe"
+                            class="w-full"
+                            :ui="inputUi"
+                        />
+                    </UFormField>
+                    <UFormField
+                        name="email"
+                        label="Email"
+                        :ui="formFieldUi"
+                    >
+                        <UInput
+                            v-model="state.email"
+                            type="email"
+                            placeholder="you@example.com"
+                            class="w-full"
+                            :ui="inputUi"
+                        />
+                    </UFormField>
+                    <UFormField
+                        name="subject"
+                        label="Subject"
+                        class="sm:col-span-2"
+                        :ui="formFieldUi"
+                    >
+                        <UInput
+                            v-model="state.subject"
+                            placeholder="What's this about?"
+                            class="w-full"
+                            :ui="inputUi"
+                        />
+                    </UFormField>
+                    <UFormField
+                        name="message"
+                        label="Message"
+                        class="sm:col-span-2"
+                        :ui="formFieldUi"
+                    >
+                        <UTextarea
+                            v-model="state.message"
+                            :rows="5"
+                            placeholder="Tell me about your project or role…"
+                            class="w-full"
+                            :ui="inputUi"
+                        />
+                    </UFormField>
+                    <div class="sm:col-span-2">
+                        <UButton
+                            type="submit"
+                            block
+                            loading-auto
+                            trailing-icon="i-heroicons-arrow-right"
+                            :ui="btnCtaUi"
+                            data-magnetic
+                        >
+                            Send message
+                        </UButton>
+                    </div>
+                </UForm>
             </div>
         </div>
-
-        <!-- Map -->
-        <div class="mb-8">
-            <iframe
-                class="w-full h-64 rounded-2xl shadow-sm"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62807.80470188593!2d109.1631875!3d12.2387911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3170674e8a0e24c5%3A0x19a2b4f81d3f63c!2zTmhhIFRyYW5nLCBLaGFuaCBIb2EsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1703340000000!5m2!1sen!2s"
-                allowfullscreen
-                loading="lazy"
-                title="Google Map showing my office location"
-                referrerpolicy="no-referrer-when-downgrade"
-            />
-        </div>
-
-        <!-- Contact Form -->
-        <UForm
-            :state="state"
-            :schema="schema"
-            :validate-on="['change', 'input']"
-            class="space-y-5"
-            @submit="onSubmit"
-        >
-            <!-- Name + Email in one row -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <UFormField
-                    name="name"
-                    :label="contactLabel.name"
-                >
-                    <UInput
-                        v-model="state.name"
-                        placeholder="John Doe"
-                        class="w-full"
-                    />
-                </UFormField>
-
-                <UFormField
-                    name="email"
-                    :label="contactLabel.email"
-                >
-                    <UInput
-                        v-model="state.email"
-                        type="email"
-                        placeholder="you@example.com"
-                        class="w-full"
-                    />
-                </UFormField>
-            </div>
-
-            <!-- Subject -->
-            <div>
-                <UFormField
-                    name="subject"
-                    :label="contactLabel.subject"
-                >
-                    <UInput
-                        v-model="state.subject"
-                        placeholder="Subject of your message"
-                        class="w-full"
-                    />
-                </UFormField>
-            </div>
-
-            <!-- Message -->
-            <div>
-                <UFormField
-                    name="message"
-                    :label="contactLabel.message"
-                >
-                    <UTextarea
-                        v-model="state.message"
-                        :rows="4"
-                        placeholder="Write your message..."
-                        class="w-full"
-                    />
-                </UFormField>
-            </div>
-
-            <!-- Submit -->
-            <div>
-                <UButton
-                    type="submit"
-                    loading-auto
-                    icon="i-heroicons-paper-airplane"
-                    class="px-6 py-2.5 text-sm font-semibold rounded-xl"
-                >
-                    Send Message
-                </UButton>
-            </div>
-        </UForm>
     </section>
 </template>

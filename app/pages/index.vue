@@ -1,16 +1,10 @@
 <template>
-    <div class="px-6 my-6 flex flex-col-reverse lg:flex-row gap-6">
-        <!-- Main content -->
-        <div class="flex-1 space-y-6">
-            <SectionHeroSection />
-            <SectionAboutSection />
-            <SectionSkillsSection />
-            <SectionProjectsSection />
-            <SectionExperienceSection />
-            <SectionContactSection />
-        </div>
-
-        <!-- Sidebar -->
-        <SidebarProfile />
+    <div>
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <ContactSection />
     </div>
 </template>

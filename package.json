@@ -12,17 +12,24 @@
   "dependencies": {
     "@nuxt/eslint": "1.9.0",
     "@nuxt/image": "1.11.0",
-    "@nuxt/ui": "3.3.2",
+    "@nuxt/ui": "^4.8.1",
     "@nuxtjs/sitemap": "^7.4.3",
     "@vercel/analytics": "^1.5.0",
     "eslint": "^9.0.0",
-    "nuxt": "^4.0.3",
+    "nuxt": "^4.4.6",
     "nuxt-gtag": "4.0.0",
     "nuxt-mail": "^7.0.1",
     "nuxt-vitalizer": "^1.0.0",
+    "tailwindcss": "^4.3.0",
     "typescript": "^5.6.3",
     "valibot": "^1.1.0",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@iconify-json/heroicons": "^1.2.3",
+    "@iconify-json/logos": "^1.2.11",
+    "@iconify-json/lucide": "^1.2.111",
+    "@iconify-json/simple-icons": "^1.2.84"
   }
 }

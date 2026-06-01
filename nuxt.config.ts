@@ -14,6 +14,26 @@ export default defineNuxtConfig({
         }
     }], 'nuxt-gtag'],
     devtools: { enabled: true },
+    // Folder-based organization without path prefixes (LayoutAppNav → AppNav).
+    components: [{ path: '~/components', pathPrefix: false }],
+    app: {
+        head: {
+            link: [
+                { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+                { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+                { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap' }
+            ],
+            script: [
+                {
+
+                    // FOUC prevention for accent + reduce-motion (color-mode handles dark class)
+                    key: 'ndlab-theme-init',
+                    innerHTML: `(function(){try{var e=document.documentElement;e.setAttribute("data-accent",localStorage.getItem("ndlab-accent")||"indigo");if(localStorage.getItem("ndlab-reduce-motion")==="true")e.setAttribute("data-reduce-motion","true");}catch(_){}})();`,
+                    tagPosition: 'head'
+                }
+            ]
+        }
+    },
     css: ['@/assets/css/main.css'],
     router: {
         options: {
@@ -23,6 +43,10 @@ export default defineNuxtConfig({
     site: {
         url: 'https://ndlab.dev',
         name: 'NDLab'
+    },
+    colorMode: {
+        preference: 'dark',
+        fallback: 'dark'
     },
     features: {
         inlineStyles: true

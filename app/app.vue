@@ -1,28 +1,93 @@
 <script setup lang="ts">
 import { Analytics } from '@vercel/analytics/nuxt'
 
-const siteTitle = 'NDLab – Personal Profile & Portfolio'
-const siteDescription = 'Personal website of Nguyen Long Dang – Developer, creator, and problem solver. Showcasing projects, skills, and career journey.'
+const siteTitle = `${siteConfig.name} — ${siteConfig.title}`
+const siteDescription = 'Nguyen Long Dang — Software Engineer with ~5 years building scalable backend systems and event-driven architectures with Node.js, AWS, RabbitMQ, Redis, and BigQuery. Explore projects, skills, and career journey.'
 const siteImage = `${siteConfig.siteUrl}/og-image.png`
 
-useHead({
+const sameAs = siteConfig.socials.filter(s => s.url.startsWith('http')).map(s => s.url)
+const knowsAbout = [...siteConfig.skills.flatMap(g => g.items.map(i => i.label)), ...siteConfig.extraSkills.map(s => s.label)]
+const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'WebSite',
+            '@id': `${siteConfig.siteUrl}/#website`,
+            'url': siteConfig.siteUrl,
+            'name': siteConfig.siteName,
+            'description': siteDescription,
+            'inLanguage': 'en',
+            'publisher': { '@id': `${siteConfig.siteUrl}/#person` }
+        },
+        {
+            '@type': 'Person',
+            '@id': `${siteConfig.siteUrl}/#person`,
+            'name': siteConfig.name,
+            'url': siteConfig.siteUrl,
+            'jobTitle': siteConfig.title,
+            'description': siteDescription,
+            'image': siteImage,
+            'email': siteConfig.personalInfo.find(p => p.label === 'Email')?.value,
+            'sameAs': sameAs,
+            'knowsAbout': knowsAbout,
+            'address': { '@type': 'PostalAddress', 'addressLocality': 'Nha Trang', 'addressCountry': 'VN' },
+            'alumniOf': { '@type': 'CollegeOrUniversity', 'name': 'Nha Trang University' }
+        },
+        {
+            '@type': 'ItemList',
+            '@id': `${siteConfig.siteUrl}/#projects`,
+            'name': 'Selected work',
+            'itemListElement': siteConfig.projects.map((p, i) => ({
+                '@type': 'ListItem',
+                'position': i + 1,
+                'item': {
+                    '@type': 'CreativeWork',
+                    'name': p.title,
+                    'description': p.description,
+                    'url': p.links.live || p.links.github
+                }
+            }))
+        }
+    ]
+}
+
+// Standardized SEO — single source of truth for meta tags
+useSeoMeta({
     title: siteTitle,
+    description: siteDescription,
+    author: siteConfig.name,
+    applicationName: siteConfig.siteName,
+    robots: 'index, follow, max-image-preview:large',
+
+    // Open Graph
+    ogType: 'website',
+    ogSiteName: siteConfig.siteName,
+    ogTitle: siteTitle,
+    ogDescription: siteDescription,
+    ogUrl: siteConfig.siteUrl,
+    ogImage: siteImage,
+    ogImageWidth: 1200,
+    ogImageHeight: 630,
+    ogImageAlt: siteTitle,
+    ogImageType: 'image/png',
+    ogLocale: 'en_US',
+
+    // Twitter
+    twitterCard: 'summary_large_image',
+    twitterTitle: siteTitle,
+    twitterDescription: siteDescription,
+    twitterImage: siteImage,
+    twitterImageAlt: siteTitle
+})
+
+useHead({
+    htmlAttrs: {
+        lang: 'en',
+        class: 'nuxt-ui-scrollbars scroll-smooth'
+    },
     meta: [
-        { name: 'description', content: siteDescription },
-
-        // Open Graph (Facebook, LinkedIn)
-        { property: 'og:type', content: 'website' },
-        { property: 'og:site_name', content: siteConfig.siteName },
-        { property: 'og:title', content: siteTitle },
-        { property: 'og:description', content: siteDescription },
-        { property: 'og:url', content: siteConfig.siteUrl },
-        { property: 'og:image', content: siteImage },
-
-        // Twitter Card
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: siteTitle },
-        { name: 'twitter:description', content: siteDescription },
-        { name: 'twitter:image', content: siteImage }
+        { name: 'theme-color', content: '#0A0B0F', media: '(prefers-color-scheme: dark)' },
+        { name: 'theme-color', content: '#F4F5F7', media: '(prefers-color-scheme: light)' }
     ],
     link: [
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
@@ -35,25 +100,9 @@ useHead({
         {
             key: 'ldjson-schema',
             type: 'application/ld+json',
-            innerHTML: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'Person',
-                'name': 'Nguyen Long Dang',
-                'url': siteConfig.siteUrl,
-                'sameAs': [
-                    'https://github.com/ndlabdev',
-                    'https://linkedin.com/in/dang-nguyen-long/'
-                ],
-                'jobTitle': 'Software Developer',
-                'description': siteDescription,
-                'image': siteImage
-            })
+            innerHTML: JSON.stringify(jsonLd)
         }
-    ],
-    htmlAttrs: {
-        lang: 'en',
-        class: 'nuxt-ui-scrollbars scroll-smooth'
-    }
+    ]
 })
 </script>
 
@@ -71,21 +120,7 @@ useHead({
         }"
     >
         <NuxtLayout>
-            <NuxtImg
-                src="/v1766392567/ndlab-dev/snow-bg.webp"
-                format="webp"
-                quality="70"
-                alt="Snow background"
-                class="fixed inset-0 -z-10 h-full w-full object-cover"
-                priority
-                provider="cloudinary"
-            />
-
             <NuxtPage />
-
-            <ClientOnly>
-                <CanvasSnow />
-            </ClientOnly>
         </NuxtLayout>
     </UApp>
 

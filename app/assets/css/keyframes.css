@@ -4,12 +4,40 @@
 }
 
 @keyframes wave {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    60% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
+    0%, 60%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(16deg); }
+    20%, 40% { transform: rotate(-10deg); }
 }
+
+@keyframes ndFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+
+@keyframes ndSpin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ndPulse {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.22); }
+    50% { box-shadow: 0 0 0 7px rgba(52, 211, 153, 0); }
+}
+
+@keyframes scrolly {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    40% { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, 10px); }
+}
+
+@keyframes gradShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes scrollx {
+    to { transform: translateX(-50%); }
+}
+
+@keyframes drift1 { to { transform: translate3d(8vw, 6vw, 0) scale(1.15); } }
+@keyframes drift2 { to { transform: translate3d(-7vw, 5vw, 0) scale(1.1); } }
+@keyframes drift3 { to { transform: translate3d(4vw, -8vw, 0) scale(1.2); } }

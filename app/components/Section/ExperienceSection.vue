@@ -1,84 +1,78 @@
 <script setup lang="ts">
-import type { ExperienceItem } from '~/utils/config'
+import type { ExperienceDescription } from '~/utils/config'
 
-const experiences = siteConfig.experience as ExperienceItem[]
+// Newest first for the timeline.
+const timeline = [...siteConfig.experience].reverse()
 
-function normalizeLine(line: string | { text: string, highlight?: string[] }) {
-    return typeof line === 'string' ? { text: line, highlight: [] } : { text: line.text, highlight: line.highlight ?? [] }
+function splitTitle(title: string) {
+    const [role, ...rest] = title.split('·')
+    return { role: role?.trim() || title, co: rest.join('·').trim() }
+}
+
+function asDesc(d: string | ExperienceDescription): ExperienceDescription {
+    return typeof d === 'string' ? { text: d } : d
 }
 </script>
 
 <template>
     <section
         id="experience"
-        class="bg-white dark:bg-neutral-900 rounded-3xl shadow p-8 scroll-mt-20"
+        class="section"
     >
-        <h2 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-8">
-            Experience
-        </h2>
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="eyebrow"><span class="idx">04</span><span class="bar" />Experience</span>
+                <h2>The <span class="grad-text">journey</span> so far.</h2>
+                <p>From a curious student to shipping production distributed systems.</p>
+                <span class="rule" />
+            </div>
 
-        <div class="relative">
-            <div class="space-y-8">
+            <div class="relative">
                 <div
-                    v-for="(exp, index) in experiences"
-                    :key="index"
-                    class="relative pl-12 md:pl-14 group"
+                    id="tlSpine"
+                    class="absolute left-[19px] top-[8px] bottom-[8px] w-[2px] rounded-[2px] overflow-hidden bg-border-soft"
                 >
-                    <!-- Timeline line (behind dot) -->
                     <div
-                        v-if="index < experiences.length - 1"
-                        class="absolute left-[0.9375rem] md:left-[1.1875rem] top-10 bottom-[-2rem] w-px bg-neutral-200 dark:bg-neutral-700"
+                        id="tlFill"
+                        class="absolute top-0 left-0 w-full h-0 [background:var(--grad)] shadow-[0_0_12px_rgba(var(--accent-rgb),0.6)]"
                     />
+                </div>
 
-                    <!-- Timeline dot (above line via z-10) -->
-                    <div
-                        class="absolute left-0 top-0 z-10 flex items-center justify-center size-8 md:size-10 rounded-xl bg-white dark:bg-neutral-900 ring-1 ring-primary/30 group-hover:ring-primary/60 group-hover:bg-primary/10 transition-all duration-300"
-                    >
-                        <UIcon
-                            :name="exp.icon"
-                            class="text-primary size-4 md:size-5"
-                        />
+                <div
+                    v-for="(item, i) in timeline"
+                    :key="i"
+                    class="tl-item group reveal relative pl-[64px] pb-[36px] last:pb-0"
+                >
+                    <div class="absolute left-[8px] top-[4px] size-[24px] rounded-full bg-surface border border-border-strong grid place-items-center z-[2] transition-[border-color,box-shadow] duration-[400ms] group-[.lit]:border-[rgba(var(--accent-rgb),0.6)] group-[.lit]:shadow-[0_0_0_4px_rgba(var(--accent-rgb),0.12)]">
+                        <i class="size-2 rounded-full bg-text-faint transition-[background] duration-[400ms] group-[.lit]:[background:var(--grad)]" />
                     </div>
-
-                    <!-- Content card -->
-                    <div class="rounded-2xl border border-neutral-100 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-800/30 p-4 md:p-5 group-hover:border-primary/20 dark:group-hover:border-primary/20 group-hover:shadow-sm transition-all duration-300">
-                        <!-- Header -->
-                        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
-                            <h3 class="text-base font-semibold text-neutral-900 dark:text-neutral-100">
-                                {{ exp.title }}
-                            </h3>
-
-                            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/10 dark:bg-primary/15 px-2.5 py-1 rounded-full w-fit shrink-0">
-                                <UIcon
-                                    name="i-heroicons-calendar-days"
-                                    class="size-3.5"
-                                />
-                                {{ exp.date }}
-                            </span>
+                    <div class="glass px-[26px] py-[24px]">
+                        <div class="flex items-start justify-between gap-4 flex-wrap">
+                            <div>
+                                <div class="text-[18px] font-display font-semibold text-text-base">
+                                    {{ splitTitle(item.title).role }}
+                                </div>
+                                <div class="text-accent-3 text-[14px] mt-[3px]">
+                                    {{ splitTitle(item.title).co }}
+                                </div>
+                            </div>
+                            <div class="font-mono text-[11.5px] text-text-muted px-[11px] py-[5px] border border-border-soft rounded-full whitespace-nowrap">
+                                {{ item.date }}
+                            </div>
                         </div>
-
-                        <!-- Description list -->
-                        <ul class="space-y-2">
+                        <ul class="list-none mt-4 flex flex-col gap-[9px]">
                             <li
-                                v-for="(line, i) in exp.description"
-                                :key="i"
-                                class="flex items-start gap-2.5 text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed"
+                                v-for="(d, j) in item.description"
+                                :key="j"
+                                class="flex gap-[11px] text-[14px] text-text-muted leading-[1.65] before:content-['▹'] before:text-accent before:shrink-0"
                             >
-                                <span class="shrink-0 mt-1.5 size-1.5 rounded-full bg-primary/50" />
-                                <span>
-                                    <template
-                                        v-for="(part, j) in splitText(normalizeLine(line).text, normalizeLine(line).highlight)"
-                                        :key="j"
-                                    >
-                                        <span
-                                            v-if="normalizeLine(line).highlight.includes(part)"
-                                            class="font-semibold text-neutral-800 dark:text-neutral-200"
-                                        >
-                                            {{ part }}
-                                        </span>
-                                        <span v-else>{{ part }}</span>
-                                    </template>
-                                </span>
+                                <span class="flex-1 min-w-0"><template
+                                    v-for="(part, k) in splitText(asDesc(d).text, asDesc(d).highlight)"
+                                    :key="k"
+                                ><strong
+                                    v-if="asDesc(d).highlight?.includes(part)"
+                                    class="text-text-base font-semibold"
+                                >{{ part }}</strong><template v-else>{{ part }}</template></template></span>
                             </li>
                         </ul>
                     </div>
