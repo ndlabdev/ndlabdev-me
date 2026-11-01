@@ -70,7 +70,7 @@ const rolesJson = JSON.stringify(siteConfig.roles)
 
                 <div class="flex gap-[28px] mt-[40px] flex-wrap">
                     <div
-                        v-for="m in [{ v: '5+', l: 'Years exp' }, { v: '3', l: 'Companies' }, { v: '10+', l: 'Technologies' }]"
+                        v-for="m in [{ v: `~${siteStats.years}`, l: 'Years exp' }, { v: `${siteStats.companies}`, l: 'Companies' }, { v: `${siteStats.technologies}+`, l: 'Technologies' }]"
                         :key="m.l"
                     >
                         <b class="grad-text font-display text-[26px] block">{{ m.v }}</b>

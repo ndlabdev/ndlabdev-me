@@ -22,53 +22,39 @@ export const experience = {
             title: 'Full-Stack Developer · Widosoft',
             description: [
                 {
-                    text: 'Developed the admin system for Honrada, an English learning platform for beginners through intermediate learners, including student, teacher, and admin management modules.',
-                    highlight: ['Honrada', 'English learning platform', 'student, teacher, and admin management modules']
+                    text: 'Maintained and upgraded admin dashboard screens for a Japanese client’s chat application with Laravel 7 and jQuery throughout the two-year tenure, alongside two in-house products, and worked on its near real-time messaging for end customers, implemented with AJAX polling against incremental message endpoints.',
+                    highlight: ['Japanese client’s chat application', 'Laravel 7', 'jQuery', 'near real-time messaging', 'AJAX polling']
                 },
                 {
-                    text: 'Built the admin dashboard for a Billiards Club Management System with booking, player ranking, and multi-location management features.',
-                    highlight: ['Billiards Club Management System', 'booking', 'player ranking', 'multi-location management']
+                    text: 'Developed the admin portal for Honrada, the company’s English learning platform, with Vue.js, Node.js, and GraphQL (Hasura), and maintained its student and teacher portals (class scheduling, teacher feedback, live video lessons).',
+                    highlight: ['Honrada', 'Vue.js', 'Node.js', 'GraphQL (Hasura)', 'student and teacher portals']
                 },
                 {
-                    text: 'Delivered additional full-stack web projects for Japanese clients, handling frontend and backend development and performance optimization.',
-                    highlight: ['full-stack web projects', 'Japanese clients', 'performance optimization']
+                    text: 'Built the admin portal for the company’s billiards club management product with Vue.js and Node.js, covering booking, player ranking, and multi-location management.',
+                    highlight: ['billiards club management product', 'booking', 'player ranking', 'multi-location management']
                 }
             ],
             icon: 'i-heroicons-code-bracket'
         },
         {
-            date: 'Apr 2023 – Feb 2026',
+            date: 'Apr 2023 – Mar 2026',
             title: 'Software Engineer · Screen1 Technologies',
             description: [
                 {
-                    text: 'Built a real-time user behavior analytics platform similar to Google Analytics, enabling marketers to collect, process, and visualize user interaction data with customizable reports.',
-                    highlight: ['real-time user behavior analytics platform']
+                    text: 'Built AI-Intent and AI-Insight end to end, from ReactJS frontend to backend: two LLM-powered features automating data enrichment and report analysis with multi-provider LLMs, BigQuery, and AWS Lambda/SQS/DynamoDB.',
+                    highlight: ['AI-Intent', 'AI-Insight', 'end to end', 'LLM-powered features', 'multi-provider LLMs', 'BigQuery', 'AWS Lambda/SQS/DynamoDB']
                 },
                 {
-                    text: 'Built AI-Intent and AI-Insight, two LLM-powered features that automate record-level enrichment and recurring report analysis, integrating multi-provider LLMs, BigQuery, AWS Lambda/SQS/DynamoDB, and a credit-based billing system.',
-                    highlight: [
-                        'AI-Intent',
-                        'AI-Insight',
-                        'LLM-powered features',
-                        'record-level enrichment',
-                        'recurring report analysis',
-                        'multi-provider LLMs',
-                        'BigQuery',
-                        'AWS Lambda/SQS/DynamoDB',
-                        'credit-based billing system'
-                    ]
+                    text: 'Built an internal AI assistant that turned scattered product and design documents into a single place to ask questions, so engineering, QA, sales, and marketing could get source-cited answers in seconds instead of searching files or waiting on the people who wrote them.',
+                    highlight: ['internal AI assistant', 'source-cited answers in seconds']
                 },
                 {
-                    text: 'Implemented scalable backend services using Node.js and AWS (Lambda, SQS, RDS, S3, ECS, CloudWatch), with event pipelines built on RabbitMQ, Redis, and Pusher for real-time dashboards.',
-                    highlight: ['Node.js', 'AWS', 'RabbitMQ', 'Redis', 'Pusher']
+                    text: 'Designed and built a Salesforce-to-BigQuery sync pipeline from scratch on RabbitMQ and Redis, supporting incremental and historical syncs with idempotent writes to prevent duplicate records on retries.',
+                    highlight: ['Salesforce-to-BigQuery sync pipeline', 'RabbitMQ', 'Redis', 'incremental and historical syncs', 'idempotent writes']
                 },
                 {
-                    text: 'Integrated Google BigQuery for data warehousing and behavioral analytics, including automated Salesforce-to-BigQuery data pipelines for cross-platform reporting.',
-                    highlight: ['Google BigQuery', 'Salesforce-to-BigQuery']
-                },
-                {
-                    text: 'Optimized large-scale query performance and ensured system reliability and cost efficiency across cloud infrastructure, leveraging AI coding tools (Cursor, Claude, ChatGPT) to accelerate feature delivery.',
-                    highlight: ['AI coding tools', 'Cursor', 'Claude', 'ChatGPT', 'accelerate feature delivery']
+                    text: 'Optimized slow PostgreSQL and BigQuery queries through query plan analysis, lowering latency and scan costs, and built real-time dashboard updates with Pusher.',
+                    highlight: ['PostgreSQL', 'BigQuery', 'query plan analysis', 'latency and scan costs', 'real-time dashboard updates', 'Pusher']
                 }
             ],
             icon: 'i-heroicons-briefcase'

@@ -2,17 +2,20 @@ import type { Highlight, Intro, PersonalInfo } from '~/types/site'
 
 export const about = {
     summary: <Intro>{
-        text: 'Software Engineer with nearly 5 years of experience building scalable web applications and data-driven platforms. Specialized in backend development with Node.js and AWS, with a strong focus on designing event-driven architectures using RabbitMQ, Redis, and BigQuery. Most recently built a real-time user behavior analytics platform that helps marketers capture, analyze, and optimize user engagement across websites. Seeking new opportunities to tackle complex backend and distributed systems challenges at scale.',
+        text: 'Full-Stack Developer with nearly 5 years of experience building event-driven, data-intensive systems with Node.js, PostgreSQL, and AWS. On a real-time user behavior analytics platform for a US client, owned the Salesforce-to-BigQuery integration service end to end (RabbitMQ, Redis) and built two LLM-powered features for automated data enrichment and report analysis. Strong in production distributed-systems concerns: idempotency, distributed locking, race conditions, and query optimization.',
         highlight: [
-            'Software Engineer',
+            'Full-Stack Developer',
             'Node.js',
+            'PostgreSQL',
             'AWS',
-            'event-driven architectures',
+            'Salesforce-to-BigQuery integration service',
             'RabbitMQ',
             'Redis',
-            'BigQuery',
-            'real-time user behavior analytics platform',
-            'backend and distributed systems'
+            'LLM-powered features',
+            'idempotency',
+            'distributed locking',
+            'race conditions',
+            'query optimization'
         ]
     },
 
@@ -20,19 +23,19 @@ export const about = {
         { label: 'Name', value: 'Nguyen Long Dang', icon: 'i-heroicons-user' },
         { label: 'Email', value: 'longdang0412@gmail.com', icon: 'i-heroicons-envelope', link: 'mailto:longdang0412@gmail.com' },
         { label: 'Phone', value: '+84 389 747 179', icon: 'i-heroicons-phone', link: 'tel:+84389747179' },
-        { label: 'Job Title', value: 'Software Engineer', icon: 'i-heroicons-code-bracket' },
-        { label: 'Experience', value: 'Nearly 5 Years', icon: 'i-heroicons-academic-cap' },
+        { label: 'Job Title', value: 'Full-Stack Developer', icon: 'i-heroicons-code-bracket' },
+        { label: 'Experience', value: 'Nearly 5 Years', icon: 'i-heroicons-briefcase' },
         { label: 'Education', value: 'Nha Trang University', icon: 'i-heroicons-academic-cap' },
         { label: 'Nationality', value: 'Vietnamese', icon: 'i-heroicons-flag' },
         { label: 'Languages', value: 'Vietnamese, English', icon: 'i-heroicons-language' },
-        { label: 'Location', value: 'Nha Trang City, Khanh Hoa Province, Vietnam', icon: 'i-heroicons-map-pin', link: 'https://maps.app.goo.gl/XCoMHu1gKKchK73T7' }
+        { label: 'Location', value: 'Nha Trang, Khanh Hoa, Vietnam', icon: 'i-heroicons-map-pin', link: 'https://maps.app.goo.gl/XCoMHu1gKKchK73T7' }
     ],
 
     highlights: <Highlight[]>[
-        { text: 'Focus on writing clean, maintainable, and scalable code for both frontend and backend applications.', highlight: ['clean, maintainable, and scalable code'] },
-        { text: 'Enjoy tackling complex problems and turning them into simple, user-friendly solutions.', highlight: ['complex problems'] },
-        { text: 'Experienced in team collaboration, contributing effectively to meet deadlines and deliver quality projects.', highlight: ['team collaboration'] },
-        { text: 'Keen on continuous learning and staying updated with new technologies in web development.', highlight: ['continuous learning'] },
-        { text: 'Pay attention to performance and user experience to ensure products run smoothly and are enjoyable to use.', highlight: ['performance and user experience'] }
+        { text: 'Design for production realities: idempotent writes, distributed locking, and safe retries so pipelines never duplicate or lose data.', highlight: ['idempotent writes', 'distributed locking', 'safe retries'] },
+        { text: 'Tune slow PostgreSQL and BigQuery queries through query plan analysis to cut latency and scan costs.', highlight: ['query plan analysis', 'latency and scan costs'] },
+        { text: 'Own features end to end, from the React or Vue frontend to the Node.js backend, queues, and cloud infrastructure.', highlight: ['end to end'] },
+        { text: 'Build practical LLM features with RAG and multi-provider LLM APIs that save teams real time.', highlight: ['LLM features', 'RAG', 'multi-provider LLM APIs'] },
+        { text: 'Work closely with engineering, QA, sales, and marketing to ship tools people actually use.', highlight: ['engineering, QA, sales, and marketing'] }
     ]
 }

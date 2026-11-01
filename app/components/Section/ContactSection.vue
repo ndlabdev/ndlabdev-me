@@ -75,7 +75,7 @@ ${siteConfig.brand || 'Portfolio Website'} Contact Form
             <div class="section-head reveal">
                 <span class="eyebrow"><span class="idx">05</span><span class="bar" />Contact</span>
                 <h2>Let's build something <span class="grad-text">reliable</span>.</h2>
-                <p>Open to backend, distributed-systems, and full-stack roles — and interesting collaborations.</p>
+                <p>Open to full-stack, backend, data-pipeline, and AI/LLM roles — and interesting collaborations.</p>
                 <span class="rule" />
             </div>
 

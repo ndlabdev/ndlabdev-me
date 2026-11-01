@@ -4,9 +4,9 @@ const { copy } = useCopy()
 const summaryParts = splitText(siteConfig.summary.text, siteConfig.summary.highlight)
 
 const stats = [
-    { count: 5, suffix: '+', label: 'Years experience' },
-    { count: 3, suffix: '', label: 'Companies' },
-    { count: 10, suffix: '+', label: 'Technologies' },
+    { count: siteStats.years, suffix: '', label: 'Years experience' },
+    { count: siteStats.companies, suffix: '', label: 'Companies' },
+    { count: siteStats.technologies, suffix: '+', label: 'Technologies' },
     { count: siteConfig.projects.length, suffix: '', label: 'Shipped projects' }
 ]
 

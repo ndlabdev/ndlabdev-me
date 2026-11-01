@@ -17,7 +17,7 @@ const location = siteConfig.personalInfo.find(p => p.label === 'Location')?.valu
                         <span class="size-[30px] rounded-[9px] grid place-items-center [background:var(--grad)] text-white font-mono text-[13px] font-bold shadow-[0_6px_18px_-6px_rgba(var(--accent-rgb),0.7)]"><span class="inline-block -translate-y-[0.5px]">&lt;/&gt;</span></span>NDLab
                     </a>
                     <p class="text-text-muted text-[14px]">
-                        Software Engineer · Backend &amp; Distributed Systems
+                        Full-Stack Developer · Backend, Data &amp; AI Systems
                     </p>
                     <span class="inline-flex items-center gap-2 mt-[14px] font-mono text-[11.5px] text-text-faint max-[560px]:justify-center"><span class="size-[7px] rounded-full bg-[#34D399] shadow-[0_0_0_3px_rgba(52,211,153,0.18)] animate-[ndPulse_2.4s_infinite]" /> Available for work · {{ location }}</span>
                 </div>

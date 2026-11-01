@@ -2,7 +2,7 @@
 import { Analytics } from '@vercel/analytics/nuxt'
 
 const siteTitle = `${siteConfig.name} — ${siteConfig.title}`
-const siteDescription = 'Nguyen Long Dang — Software Engineer with ~5 years building scalable backend systems and event-driven architectures with Node.js, AWS, RabbitMQ, Redis, and BigQuery. Explore projects, skills, and career journey.'
+const siteDescription = 'Nguyen Long Dang — Full-Stack Developer with nearly 5 years building event-driven, data-intensive systems with Node.js, PostgreSQL, AWS, RabbitMQ, Redis, and BigQuery, plus LLM-powered features with RAG and LangChain. Explore projects, skills, and career journey.'
 const siteImage = `${siteConfig.siteUrl}/og-image.png`
 
 const sameAs = siteConfig.socials.filter(s => s.url.startsWith('http')).map(s => s.url)

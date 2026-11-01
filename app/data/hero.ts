@@ -7,28 +7,28 @@ export const hero = {
     brand: 'ndlabdev',
     avatar: '/v1766394686/ndlab-dev/avatar_url.png',
     placeholderAvatar: 'https://placehold.co/200x200/png?text=ND',
-    title: 'Software Engineer',
+    title: 'Full-Stack Developer',
     siteName: 'NDLab',
     siteUrl: 'https://ndlab.dev',
 
     // Hero role rotation
     roles: [
-        'Software Engineer',
+        'Full-Stack Developer',
         'Backend Engineer',
-        'Data Pipeline Developer',
-        'API Architect',
+        'Data Pipeline Engineer',
+        'LLM Feature Builder',
         'Problem Solver'
     ],
 
     // Hero intro
     intro: <Intro>{
-        text: 'Welcome to my personal website! I’m a Software Engineer with nearly 5 years of experience designing scalable backend systems and event-driven architectures. Most recently built a real-time user behavior analytics platform, and I’m always looking for the next distributed systems challenge. Explore my projects, skills, and journey here.',
+        text: 'Welcome to my personal website! I’m a Full-Stack Developer with nearly 5 years of experience building event-driven, data-intensive systems with Node.js, PostgreSQL, and AWS. Most recently I worked on a real-time user behavior analytics platform for a US client, owning its Salesforce-to-BigQuery integration and shipping LLM-powered features. Explore my projects, skills, and journey here.',
         highlight: [
-            'Software Engineer',
-            'scalable backend systems',
-            'event-driven architectures',
+            'Full-Stack Developer',
+            'event-driven, data-intensive systems',
             'real-time user behavior analytics platform',
-            'distributed systems'
+            'Salesforce-to-BigQuery integration',
+            'LLM-powered features'
         ]
     }
 }
